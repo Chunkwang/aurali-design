@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>New Project - Aurali</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                "colors": {
+                    "on-background": "#201a18",
+                    "secondary-container": "#e6e2de",
+                    "on-primary-fixed-variant": "#6e381d",
+                    "on-secondary-container": "#666461",
+                    "on-tertiary-fixed-variant": "#004f50",
+                    "on-error": "#ffffff",
+                    "primary": "#8a4f32",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#58270d",
+                    "surface": "#fff8f6",
+                    "tertiary": "#136969",
+                    "secondary-fixed": "#e6e2de",
+                    "inverse-on-surface": "#fbeee9",
+                    "on-tertiary-fixed": "#002020",
+                    "primary-fixed-dim": "#ffb695",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#003b3c",
+                    "tertiary-fixed-dim": "#89d3d3",
+                    "outline": "#85736c",
+                    "on-surface-variant": "#53443d",
+                    "secondary-fixed-dim": "#cac6c2",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#605e5b",
+                    "on-secondary-fixed": "#1c1b19",
+                    "surface-container-highest": "#ede0db",
+                    "surface-bright": "#fff8f6",
+                    "background": "#fff8f6",
+                    "surface-variant": "#ede0db",
+                    "inverse-primary": "#ffb695",
+                    "tertiary-fixed": "#a5f0ef",
+                    "surface-dim": "#e4d7d3",
+                    "on-primary-fixed": "#351000",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#362f2c",
+                    "primary-container": "#d48c6b",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#484644",
+                    "surface-container-high": "#f3e5e1",
+                    "on-surface": "#201a18",
+                    "surface-container": "#f8ebe6",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#8a4f32",
+                    "outline-variant": "#d8c2ba",
+                    "surface-container-low": "#fef1ec",
+                    "tertiary-container": "#5fa9a9",
+                    "primary-fixed": "#ffdbcc"
+                },
+                "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+                },
+                "spacing": {
+                    "container-padding": "24px",
+                    "grid-gutter": "24px",
+                    "element-gap": "16px",
+                    "section-gap": "56px",
+                    "base": "8px"
+                },
+                "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "display-accent": ["Instrument Serif"],
+                    "title-sm": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-md-mobile": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+                },
+                "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-accent": ["48px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                    "title-sm": ["18px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                }
+            }
+        }
+    }
+  </script>
+  <style>
+    body { background-color: #FBF9F6 !important; }
+    .organic-shadow { box-shadow: 0 4px 20px rgba(96, 94, 91, 0.06); }
+    .float-shadow { box-shadow: 0 12px 40px rgba(138, 79, 50, 0.08); }
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  
+    .surface-card {
+        background-color: #F5F2EC;
+        box-shadow: 0 4px 20px rgba(96, 94, 91, 0.08);
+    }
+
+    /* Hide system screenshot toasts or developer notifications in demo */
+    div[class*="screenshot"], div[id*="screenshot"], .screenshot-toast, .screenshot-notification, [id*="gemini-dev"], [class*="gemini-dev"] {
+      display: none !important;
+    }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen overflow-hidden flex antialiased">
+
+  <!-- SideNavBar -->
+  <aside class="hidden md:flex h-full w-56 shadow-[20px_0_40px_rgba(96,94,91,0.04)] flex-col py-4 px-3 z-40 bg-surface shrink-0 border-r border-border/5">
+    <!-- Header / Logo -->
+    <div class="mb-8 px-2">
+      <a href="index.html" style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 500; font-size: 1.55rem; letter-spacing: -0.5px;" class="text-on-surface dark:text-surface-bright flex items-center">
+        aurali.design
+      </a>
+    </div>
+    <!-- Navigation Links -->
+    <nav class="space-y-1 bg-[#FBF9F6] border border-outline-variant/30 rounded-xl p-2 mt-4 shadow-sm flex-grow">
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-colors duration-200 active:scale-95 transition-transform group text-[11px] font-semibold" href="#">
+        <span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors">home</span>
+        <span>Home</span>
+      </a>
+      
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-colors duration-200 active:scale-95 transition-transform group text-[11px] font-semibold" href="#">
+        <span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors">folder_copy</span>
+        <span>My Projects</span>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-colors duration-200 active:scale-95 transition-transform group text-[11px] font-semibold" href="#">
+        <span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors">dashboard_customize</span>
+        <span>Templates</span>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-colors duration-200 active:scale-95 transition-transform group text-[11px] font-semibold" href="#">
+        <span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors">settings</span>
+        <span>Settings</span>
+      </a>
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-colors duration-200 active:scale-95 transition-transform group text-[11px] font-semibold" href="feedback.html">
+        <span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors">help</span>
+        <span>Help</span>
+      </a>
+    </nav>
+    <!-- CTA & Footer -->
+    <div class="mt-auto pt-4 border-t border-outline-variant space-y-3 px-2">
+      <button onclick="window.location.href='payment.html?plan=lifetime'" class="w-full py-2 px-3 bg-primary text-on-primary rounded-btn font-semibold hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm active:scale-95 flex items-center justify-center gap-2 text-xs">
+        <span class="material-symbols-outlined text-sm">workspace_premium</span>
+        Upgrade Plan
+      </button>
+      <a class="flex items-center gap-3 py-1.5 text-secondary hover:text-error transition-colors duration-200 active:scale-95 group text-xs font-semibold" href="#">
+        <span class="material-symbols-outlined text-sm group-hover:text-error transition-colors">logout</span>
+        <span>Log Out</span>
+      </a>
+      <!-- User Profile Avatar (Placeholder) -->
+      <div class="flex items-center gap-3 pt-3 border-t border-outline-variant/50">
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant shrink-0">
+          <img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpyn0Cl1Ygql8Y1sBnAv9vNtGBdKf1x2QR_g1nGnysa6ezFxl8lQTHd0tgSlmcwH8VTktaP-Qeq8MSP5lmNFDzt4leWLd4jDuHYRVPINuvkWpTuvVYkUudUOv6FCSf7lYpRMZZQeLAV2QId0XXej7haxdWO1yVGHZEv-SLqtk2BJYJXm_BMsUuY0wR_xNuUmr_cGpN7uEtKT_S2aX1R-mhiYHatuyIYmA0mHSqcxBISAHx7GuK_dQc7aCBwEn4GmsFidFwMDvo1vc">
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="text-xs font-bold text-on-surface truncate">Alex River</span>
+          <span class="text-[10px] text-secondary">Pro Plan</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <div class="flex-1 flex flex-col h-screen overflow-hidden relative">
+    
+
+    <!-- Main Canvas -->
+    <main class="flex-grow flex flex-col px-6 py-4 max-w-7xl w-full mr-auto overflow-hidden justify-between">
+            <!-- Header Area -->
+      <header class="flex flex-col gap-1 shrink-0 mb-4">
+        <div class="flex items-center gap-1.5 text-secondary font-label-caps text-label-caps uppercase tracking-wider text-[10px] mb-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+          <span class="ml-1.5">Step 1 of 3</span>
+        </div>
+        <h1 class="text-3xl font-extrabold text-on-surface">Define the essence.</h1>
+        <p class="text-xs text-secondary max-w-2xl mt-1">Provide the foundational details and core assets for your application. This shapes the creative direction of your generated screenshots.</p>
+      </header>
+
+      <!-- Bento Layout Content -->
+      <section class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 min-h-0 overflow-y-auto pb-6 pr-2">
+        
+        <!-- Left Column -->
+        <div class="flex flex-col gap-6">
+          <!-- App Details Card -->
+          <div class="bg-white rounded-2xl p-6 organic-shadow border border-outline-variant/20 flex flex-col gap-5">
+            <!-- App Name -->
+            <div class="flex flex-col gap-2 relative">
+              <label class="text-[11px] font-bold text-on-surface">App Name</label>
+              <input class="w-full bg-white border border-outline-variant/60 rounded-xl px-4 py-3 text-sm font-bold text-on-surface focus:outline-none focus:border-primary transition-colors placeholder:text-on-surface" placeholder="e.g. Luminar Space" type="text" value="Luminar Space"/>
+            </div>
+            <!-- App Store URL -->
+            <div class="flex flex-col gap-2 relative">
+              <label class="text-[11px] font-bold text-on-surface">App Store URL (Optional)</label>
+              <div class="relative w-full">
+                <input class="w-full bg-white border border-outline-variant/60 rounded-xl pl-4 pr-28 py-3 text-sm font-bold text-on-surface focus:outline-none focus:border-primary transition-colors placeholder:text-on-surface" placeholder="https://apps.apple.com/..." type="text" value="https://apps.apple.c..."/>
+                <div class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1.5 bg-[#F5F2EC] text-[#8a4f32] text-[10px] font-bold px-2.5 py-1.5 rounded-lg border border-[#8a4f32]/10">
+                  <span class="material-symbols-outlined" style="font-size: 12px; font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                  <span>App Found</span>
+                </div>
+              </div>
+            </div>
+            <!-- Creative Prompt -->
+            <div class="flex flex-col gap-2 mt-2">
+              <div class="flex flex-col gap-0.5">
+                <label class="text-[15px] font-bold text-on-surface">Creative Prompt</label>
+                <p class="text-[11px] text-secondary">Describe your app's vibe, audience, and key features.</p>
+              </div>
+              <textarea class="w-full h-44 bg-[#F5F2EC] rounded-xl p-4 text-xs text-secondary/60 border border-transparent focus:border-primary outline-none transition-all resize-none placeholder:text-secondary/60 leading-relaxed" placeholder="e.g. A minimalist meditation app targeting busy professionals. The vibe is calm, using deep forest greens and soft typography..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Column -->
+        <div class="flex flex-col gap-6">
+          <!-- Raw Screenshots -->
+          <div class="bg-white rounded-2xl p-6 organic-shadow border border-outline-variant/20 flex flex-col gap-4 h-full">
+            <div class="flex justify-between items-start">
+              <div class="flex flex-col gap-1">
+                <h3 class="text-[15px] font-bold text-on-surface">Raw Screenshots</h3>
+                <p class="text-[11px] text-secondary leading-relaxed">Upload the unedited screens<br>from your app.</p>
+              </div>
+              <span class="text-[10px] font-bold text-[#8a4f32] bg-[#F5F2EC] px-3 py-1.5 rounded-full border border-[#8a4f32]/10">Up to 10<br>images</span>
+            </div>
+            <div class="flex-grow bg-[#FBF9F6] border-2 border-dashed border-outline-variant/50 rounded-xl flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-primary transition-all relative overflow-hidden min-h-[350px]">
+              <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(#8a4f32 1px, transparent 1px); background-size: 16px 16px;"></div>
+              
+              <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-1 z-10">
+                <span class="material-symbols-outlined text-[#8a4f32]" style="font-size: 20px;">view_carousel</span>
+              </div>
+              <div class="text-center z-10">
+                <p class="text-[13px] font-bold text-on-surface mb-1.5">Drag &amp; drop your screens here</p>
+                <p class="text-[11px] text-secondary">or <span class="text-[#8a4f32] border-b border-[#8a4f32]/30 pb-0.5">click to browse</span> from your computer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="flex flex-col gap-5">
+          <!-- App Logo -->
+          <div class="bg-white rounded-2xl p-5 organic-shadow border border-outline-variant/20 flex flex-col gap-3">
+            <div class="flex flex-col gap-0.5">
+              <h3 class="text-[15px] font-bold text-on-surface">App Logo</h3>
+              <p class="text-[11px] text-secondary">PNG or SVG.</p>
+            </div>
+            <div class="h-16 bg-[#FBF9F6] border border-dashed border-outline-variant/60 rounded-xl flex flex-col items-center justify-center gap-1 cursor-pointer hover:border-primary transition-all">
+              <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">add_photo_alternate</span>
+              <span class="text-[9px] text-secondary">Select</span>
+            </div>
+          </div>
+          
+          <!-- Visual Collector -->
+          <div class="bg-white rounded-2xl p-5 organic-shadow border border-outline-variant/20 flex flex-col gap-4">
+            <div class="flex justify-between items-center">
+              <h3 class="text-[13px] font-bold text-on-surface">Visual Collector ✨</h3>
+            </div>
+            <p class="text-[11px] text-secondary">Add competitor URLs for style inspiration.</p>
+            <div class="flex flex-col gap-2">
+              <button class="w-full bg-[#FBF9F6] text-secondary text-xs font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2 border border-transparent hover:border-outline-variant transition-colors">
+                <span class="material-symbols-outlined text-sm">link</span>
+                Paste App
+              </button>
+              <div class="w-full bg-[#FBF9F6] rounded-xl p-2.5 flex items-center justify-between border border-[#8a4f32]/10 hover:border-outline-variant transition-colors group cursor-default">
+                <div class="flex items-center gap-2.5 overflow-hidden">
+                  <div class="w-7 h-7 rounded bg-[#e8e2dd] flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[14px] text-[#8a4f32]">grid_view</span>
+                  </div>
+                  <div class="flex flex-col min-w-0">
+                    <span class="text-[10px] font-bold text-[#8a4f32] truncate">Competitor</span>
+                    <span class="text-[9px] text-secondary truncate">apps.apple.com...</span>
+                  </div>
+                </div>
+                <button class="text-secondary opacity-0 group-hover:opacity-100 transition-opacity hover:text-error p-1">
+                  <span class="material-symbols-outlined text-sm">close</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category -->
+          <div class="bg-white rounded-2xl p-4 organic-shadow border border-outline-variant/20 flex flex-col gap-1 cursor-pointer hover:border-outline-variant transition-colors">
+            <label class="text-[10px] text-secondary">Category</label>
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold text-on-surface">Lifestyle</span>
+              <span class="material-symbols-outlined text-secondary text-sm">expand_more</span>
+            </div>
+          </div>
+
+          <!-- Language -->
+          <div class="bg-white rounded-2xl p-4 organic-shadow border border-outline-variant/20 flex flex-col gap-1 cursor-pointer hover:border-outline-variant transition-colors">
+            <label class="text-[10px] text-secondary">Language</label>
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold text-on-surface">English</span>
+              <span class="material-symbols-outlined text-secondary text-sm">expand_more</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex justify-end pt-3 border-t border-outline-variant mt-4 shrink-0">
+        <button onclick="window.location.href='project_step2.html'" class="bg-primary text-on-primary text-xs font-semibold py-2.5 px-6 rounded-xl float-shadow hover:bg-on-primary-container transition-all active:scale-95 flex items-center gap-2">
+          Next: Choose Style
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </section>
+    </main>
+  </div>
+  <script>
+    // Smooth zoom out from the exact coordinates passed from previous page click (demo mode only)
+    const params = new URLSearchParams(window.location.search);
+    const isDemo = params.get('demo') === 'true';
+
+    if (isDemo) {
+      const zoomX = params.get('zoomX') || (window.innerWidth * 0.3);
+      const zoomY = params.get('zoomY') || (window.innerHeight * 0.6);
+
+      document.body.style.transformOrigin = `${zoomX}px ${zoomY}px`;
+      document.body.style.transform = "scale(1.24)";
+      document.body.style.transition = "transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)";
+      
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.body.style.transform = "scale(1)";
+        }, 50);
+      });
+    }
+  </script>
+</body>
+</html>
