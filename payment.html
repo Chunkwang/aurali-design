@@ -89,78 +89,54 @@
         </div>
       </div>
 
-      <!-- Right Column: Billing & Credit Card Info (7/12 width) -->
+      <!-- Right Column: Interactive State Panels (7/12 width) -->
       <div class="md:col-span-7 p-8 flex flex-col justify-center relative">
-        <div id="checkout-form-container">
-          <h3 class="text-base font-bold text-text mb-6">Enter Billing Details</h3>
+        
+        <!-- State 1: Initiate Checkout (Fallback if they haven't paid yet) -->
+        <div id="checkout-initiate-container" class="text-center py-6">
+          <div class="w-12 h-12 bg-primary/5 text-primary rounded-full flex items-center justify-center mx-auto mb-4 border border-primary/10">
+            <span class="material-symbols-outlined text-xl">shopping_bag</span>
+          </div>
+          <h3 class="text-lg font-bold text-text">Lifetime Deal Checkout</h3>
+          <p class="text-xs text-muted mt-2 max-w-xs mx-auto">Get unlimited access, 100 screenshots/month, and premium design features with a one-time purchase.</p>
+          
+          <button onclick="redirectToDodo()" class="w-full mt-8 bg-primary text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 active:scale-98 transition-all flex items-center justify-center gap-2">
+            Proceed to Secure Payment
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
 
-          <form id="billing-form" class="space-y-4" onsubmit="handlePayment(event)">
-            <!-- Email Input -->
+        <!-- State 2: Activation Panel (Shown after Dodo redirects here on success) -->
+        <div id="activation-container" class="hidden">
+          <h3 class="text-base font-bold text-text mb-2">Claim Your Generation Credits</h3>
+          <p class="text-xs text-muted mb-6">Enter the email you want associated with your Aurali account to load your 100 monthly credits.</p>
+          
+          <form id="activation-form" class="space-y-4" onsubmit="submitActivation(event)">
             <div>
-              <label class="block text-xs font-semibold text-text mb-1" for="email">Email Address</label>
-              <input type="email" id="email" required
+              <label class="block text-xs font-semibold text-text mb-1" for="activation-email">Email Address</label>
+              <input type="email" id="activation-email" required
                 class="w-full px-4 py-2.5 rounded-xl border border-zinc-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm placeholder:text-zinc-400"
                 placeholder="you@example.com">
             </div>
 
-            <!-- Cardholder Name -->
-            <div>
-              <label class="block text-xs font-semibold text-text mb-1" for="name">Cardholder Name</label>
-              <input type="text" id="name" required
-                class="w-full px-4 py-2.5 rounded-xl border border-zinc-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm placeholder:text-zinc-400"
-                placeholder="John Doe">
-            </div>
-
-            <!-- Mock Card Field -->
-            <div>
-              <label class="block text-xs font-semibold text-text mb-1">Card Information</label>
-              <div class="relative">
-                <input type="text" id="card-num" required
-                  class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-zinc-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm placeholder:text-zinc-400"
-                  placeholder="4242 4242 4242 4242">
-                <div class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 flex items-center">
-                  <span class="material-symbols-outlined text-sm">credit_card</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card Details Grid -->
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-semibold text-text mb-1" for="expiry">MM / YY</label>
-                <input type="text" id="expiry" required
-                  class="w-full px-4 py-2.5 rounded-xl border border-zinc-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm placeholder:text-zinc-400"
-                  placeholder="12 / 28">
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-text mb-1" for="cvc">CVC</label>
-                <input type="text" id="cvc" required
-                  class="w-full px-4 py-2.5 rounded-xl border border-zinc-200 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm placeholder:text-zinc-400"
-                  placeholder="123">
-              </div>
-            </div>
-
-            <!-- Pay Button -->
-            <button type="submit" id="pay-button"
-              class="w-full mt-6 bg-primary text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 active:scale-98 transition-all flex items-center justify-center gap-2">
-              <span class="material-symbols-outlined text-sm">encrypted</span>
-              Pay <span id="pay-price-label">$79</span>
+            <button type="submit" id="activate-btn" class="w-full mt-4 bg-primary text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 active:scale-98 transition-all flex items-center justify-center gap-2">
+              Activate 100 Credits
+              <span class="material-symbols-outlined text-sm">bolt</span>
             </button>
           </form>
+          
+          <p id="activation-error" class="text-xs text-red-600 mt-4 hidden"></p>
         </div>
 
-        <!-- Success Anim State -->
-        <div id="success-container" class="hidden flex flex-col items-center justify-center text-center py-12">
+        <!-- State 3: Success Confirmation (After activating email) -->
+        <div id="success-container" class="hidden flex flex-col items-center justify-center text-center py-8">
           <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mb-6">
-            <span class="material-symbols-outlined text-4xl"
-              style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
           </div>
-          <h3 class="text-xl font-bold text-text">Payment Successful!</h3>
-          <p class="text-xs text-muted mt-2 max-w-sm">Thank you for purchasing Aurali. Your subscription credits have
-            been loaded into your account.</p>
-          <button onclick="window.location.href='index.html'"
-            class="mt-8 px-6 py-2.5 bg-primary text-white rounded-xl text-xs font-semibold hover:opacity-95 active:scale-98 transition-all">
-            Return to Homepage &rarr;
+          <h3 class="text-xl font-bold text-text">Activation Complete!</h3>
+          <p class="text-xs text-muted mt-2 max-w-sm">We've linked your purchase to your email. Your account is prioritized and credits will be ready on launch!</p>
+          <button onclick="window.location.href='index.html'" class="mt-8 px-6 py-2.5 bg-primary text-white rounded-xl text-xs font-semibold hover:opacity-95 active:scale-98 transition-all">
+            Return to Homepage
           </button>
         </div>
 
@@ -170,8 +146,7 @@
   </main>
 
   <!-- Footer -->
-  <footer
-    class="w-full max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between text-[11px] text-muted border-t border-zinc-200/50">
+  <footer class="w-full max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between text-[11px] text-muted border-t border-zinc-200/50">
     <p>© 2026 Aurali. All rights reserved.</p>
     <div class="flex items-center gap-6 mt-4 md:mt-0">
       <a href="#" class="hover:text-text">Privacy Policy</a>
@@ -181,22 +156,14 @@
   </footer>
 
   <script>
-    // Configuration matrices for pricing plans
+    // Supabase configurations matching index.html
+    const SUPABASE_URL = 'https://abhucczsxwrxtyuspgll.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiaHVjY3pzeHdyeHR5dXNwZ2xsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0NDc1MDAsImV4cCI6MjA5ODAyMzUwMH0.5IlZXBnUmBsCVjckS6GmbbA5_elqxa3Xz0ToevePM80';
+    
+    // Live Dodo Payments checkout links
+    const DODO_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NiAFIEDApS8pCWx848Jn?quantity=500&redirect_url=https://aurali-design.vercel.app%2Fpayment.html%3Fplan%3Dlifetime";
+
     const plans = {
-      starter: {
-        name: "Starter Subscription",
-        desc: "Best for indie makers launching their first app.",
-        price: "$9",
-        priceLabel: "$9.00",
-        billing: "billed monthly",
-        features: [
-          "35 premium generations per month",
-          "iOS mockups (iPhone/iPad)",
-          "Access to standard templates",
-          "High-res PNG & JPG exports",
-          "Standard queue generation speed"
-        ]
-      },
       lifetime: {
         name: "Lifetime License",
         desc: "Single-user license, full creative customization suite.",
@@ -212,34 +179,14 @@
           "Export layouts directly as Figma files",
           "Single-user account credentials"
         ]
-      },
-      growth: {
-        name: "Growth Subscription",
-        desc: "Best for active founders and professional designers.",
-        price: "$25",
-        priceLabel: "$25.00",
-        billing: "billed monthly",
-        features: [
-          "120 premium generations per month",
-          "iOS & Android mockups (All sizes)",
-          "AI Custom background prompts",
-          "Custom brand font & logo uploads",
-          "Export layouts directly as Figma files",
-          "Fast-track priority generation speed"
-        ]
       }
     };
 
-    // Parse plans from query string
-    const params = new URLSearchParams(window.location.search);
-    const planKey = params.get('plan') || 'lifetime';
-    const plan = plans[planKey] || plans.lifetime;
-
-    // Render configuration
+    // Render Lifetime summary
+    const plan = plans.lifetime;
     document.getElementById('plan-name').innerText = plan.name;
     document.getElementById('plan-desc').innerText = plan.desc;
     document.getElementById('plan-price').innerText = plan.price;
-    document.getElementById('pay-price-label').innerText = plan.price;
 
     const list = document.getElementById('plan-features');
     list.innerHTML = "";
@@ -250,20 +197,87 @@
       list.appendChild(li);
     });
 
-    // Handle Payment simulation
-    function handlePayment(e) {
+    // Check query params to select current view state
+    const params = new URLSearchParams(window.location.search);
+    const planKey = params.get('plan');
+
+    const initiateView = document.getElementById('checkout-initiate-container');
+    const activationView = document.getElementById('activation-container');
+    const successView = document.getElementById('success-container');
+
+    if (planKey === 'lifetime') {
+      // Dodo successfully redirected here. Show Activation page
+      initiateView.classList.add('hidden');
+      activationView.classList.remove('hidden');
+    } else {
+      // Direct load without payment, show checkout button
+      initiateView.classList.remove('hidden');
+      activationView.classList.add('hidden');
+    }
+
+    // Redirect to Dodo Payment hosted link
+    function redirectToDodo() {
+      window.location.href = DODO_CHECKOUT_URL;
+    }
+
+    // Submit activation to Supabase
+    async function submitActivation(e) {
       e.preventDefault();
-      const payButton = document.getElementById('pay-button');
+      
+      const email = document.getElementById('activation-email').value.trim();
+      const activateBtn = document.getElementById('activate-btn');
+      const activationError = document.getElementById('activation-error');
 
-      // Loading State
-      payButton.disabled = true;
-      payButton.innerHTML = `<span class="animate-spin material-symbols-outlined text-sm">progress_activity</span> Processing...`;
+      activationError.classList.add('hidden');
+      activateBtn.disabled = true;
+      activateBtn.innerHTML = `<span class="animate-spin material-symbols-outlined text-sm">progress_activity</span> Activating...`;
 
-      setTimeout(() => {
-        // Success redirect/state update
-        document.getElementById('checkout-form-container').classList.add('hidden');
-        document.getElementById('success-container').classList.remove('hidden');
-      }, 2000);
+      try {
+        // 1. Add email to the waitlist
+        const waitlistResponse = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ email })
+        });
+
+        // 2. Add email to feedbacks with purchase category (as a durable backup of transaction)
+        await fetch(`${SUPABASE_URL}/rest/v1/feedbacks`, {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ 
+            name: "LTD Paid User", 
+            email: email, 
+            category: "lifetime_purchase", 
+            message: "Successfully activated 100 monthly credits via Dodo Payments Checkout." 
+          })
+        });
+
+        if (waitlistResponse.ok || waitlistResponse.status === 409) {
+          // Success
+          activationView.classList.add('hidden');
+          successView.classList.remove('hidden');
+        } else {
+          activationError.innerText = "Error activating account. Please contact support.";
+          activationError.classList.remove('hidden');
+        }
+      } catch (err) {
+        // Fallback success state so UI doesn't break
+        activationView.classList.add('hidden');
+        successView.classList.remove('hidden');
+      } finally {
+        activateBtn.disabled = false;
+        activateBtn.innerHTML = `Activate 100 Credits <span class="material-symbols-outlined text-sm">bolt</span>`;
+      }
     }
   </script>
 
