@@ -2197,6 +2197,457 @@
       color: #8a4f32;
       transition: transform 0.6s ease;
     }
+
+    /* ── BENTO FEATURES GRID ── */
+    .bento-section {
+      border-top: 1px solid rgba(138, 79, 50, 0.08);
+    }
+    .bento-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 64px auto;
+    }
+    .bento-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(138, 79, 50, 0.05);
+      color: #8a4f32;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    .bento-header h2 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #1C1B19;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .bento-header p {
+      font-size: 14px;
+      color: #6E6C64;
+      line-height: 1.6;
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+    .bento-card {
+      border-radius: 32px;
+      border: 1px solid rgba(28, 27, 25, 0.08);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      min-height: 380px;
+      box-shadow: 0 4px 12px rgba(96, 94, 91, 0.03);
+      position: relative;
+      text-align: left;
+    }
+    
+    /* Card themes */
+    .bento-card.bg-purple { background-color: #FAF8FC; }
+    .bento-card.bg-blue { background-color: #F4F9FC; }
+    .bento-card.bg-orange { background-color: #FFFBF7; }
+    .bento-card.bg-[#F2F9F5] { background-color: #F2F9F5; }
+    .bento-card.bg-beige { background-color: #FAF9FC; }
+    .bento-card.bg-navy { background-color: #F4F7FC; }
+    .bento-card.bg-lime { background-color: #F8FAF2; }
+
+    /* Column grid mappings */
+    .col-5 { grid-column: span 5; }
+    .col-7 { grid-column: span 7; }
+    .col-4 { grid-column: span 4; }
+
+    /* Inside card visual elements styling */
+    .bento-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      position: relative;
+      padding: 16px 0;
+    }
+    
+    /* Prompts Card Mockup */
+    .prompt-box {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.05);
+      max-width: 280px;
+      width: 100%;
+      font-size: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 2;
+    }
+    .prompt-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #8a4f32;
+      font-weight: 700;
+    }
+    .prompt-tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #8a4f32;
+    }
+    .prompt-content {
+      background: #f4f4f5;
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.05);
+      color: #1C1B19;
+      line-height: 1.5;
+    }
+    .floating-device {
+      position: absolute;
+      right: 16px;
+      bottom: -16px;
+      width: 128px;
+      height: 176px;
+      background: #f4f4f5;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transform: rotate(12deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8px;
+      z-index: 1;
+    }
+    .floating-device-screen {
+      background: rgba(138, 79, 50, 0.1);
+      flex-grow: 1;
+      margin: 8px 0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8a4f32;
+      font-size: 12px;
+      font-style: italic;
+      font-family: 'Instrument Serif', serif;
+    }
+    .device-bar {
+      height: 4px;
+      background: #d4d4d8;
+      border-radius: 2px;
+      width: 100%;
+    }
+
+    /* Chat bubble simulator */
+    .chat-simulator {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .chat-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .chat-row.right {
+      justify-content: flex-end;
+    }
+    .chat-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .chat-avatar.user {
+      background: #e4e4e7;
+      color: #1C1B19;
+    }
+    .chat-avatar.ai {
+      background: rgba(138, 79, 50, 0.1);
+      color: #8a4f32;
+    }
+    .chat-bubble {
+      font-size: 12px;
+      padding: 10px 16px;
+      border-radius: 16px;
+      max-width: 80%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .chat-bubble.user {
+      background: #8a4f32;
+      color: white;
+      border-top-right-radius: 0;
+    }
+    .chat-bubble.ai {
+      background: white;
+      border: 1px solid rgba(0,0,0,0.06);
+      color: #1C1B19;
+      border-top-left-radius: 0;
+    }
+    .chat-preview-box {
+      background: white;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10px;
+      width: 100%;
+    }
+    .preview-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .preview-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+    .preview-tags {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.6;
+    }
+    .preview-tag {
+      background: #f4f4f5;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Device Nodes diagram */
+    .nodes-container {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .center-node {
+      width: 48px;
+      height: 48px;
+      background: #8a4f32;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      box-shadow: 0 8px 16px rgba(138, 79, 50, 0.25);
+    }
+    .outer-node {
+      position: absolute;
+      background: white;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      border: 1px solid rgba(28, 27, 25, 0.08);
+      font-size: 9px;
+      font-weight: 700;
+      color: #1C1B19;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      z-index: 2;
+    }
+    .outer-node-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .outer-node-dot.blue { background: #3b82f6; }
+    .outer-node-dot.green { background: #10b981; }
+    .outer-node-dot.orange { background: #f59e0b; }
+    .outer-node-dot.purple { background: #8b5cf6; }
+
+    .outer-node.top { top: 0; left: 50%; transform: translateX(-50%); }
+    .outer-node.bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
+    .outer-node.left { left: -16px; top: 35%; }
+    .outer-node.right { right: -16px; top: 35%; }
+
+    /* Conversion Chart */
+    .conversion-chart {
+      background: white;
+      border: 1px solid rgba(28, 27, 25, 0.08);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      max-width: 200px;
+      width: 100%;
+    }
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8px;
+      font-weight: 700;
+      color: #6E6C64;
+      margin-bottom: 12px;
+    }
+    .chart-rate {
+      color: #10b981;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .chart-bars {
+      height: 64px;
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .chart-bar {
+      flex-grow: 1;
+      background: #f4f4f5;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    .chart-bar.fill-light { background: rgba(138, 79, 50, 0.25); }
+    .chart-bar.fill-full { background: #8a4f32; }
+
+    /* Brand Settings panel */
+    .brand-panel {
+      background: white;
+      border: 1px solid rgba(28, 27, 25, 0.06);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      max-width: 200px;
+      width: 100%;
+      font-size: 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .brand-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f4f4f5;
+      padding-bottom: 8px;
+      font-weight: 700;
+      color: #1C1B19;
+    }
+    .brand-logo-txt {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      color: #8a4f32;
+      font-size: 11px;
+    }
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-row span:first-child { color: #6E6C64; }
+    .brand-color-box {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      background: #8a4f32;
+    }
+    .brand-row-value {
+      font-weight: 700;
+      color: #1C1B19;
+    }
+
+    /* Share & export links */
+    .export-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .export-item {
+      background: white;
+      border: 1px solid rgba(28, 27, 25, 0.06);
+      border-radius: 16px;
+      padding: 16px 12px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .export-item p {
+      font-size: 9px;
+      font-weight: 700;
+      color: #1C1B19;
+      margin-top: 4px;
+    }
+    
+    /* Playful Badge styling */
+    .playful-badge {
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: #E6F4D0;
+      color: #4D7C0F;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .playful-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4D7C0F;
+    }
+
+    /* Typography helpers */
+    .bento-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1C1B19;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      margin-top: 0;
+    }
+    .bento-card p {
+      font-size: 12px;
+      color: #6E6C64;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-w: 768px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .col-5, .col-7, .col-4 {
+        grid-column: span 12;
+      }
+      .bento-card {
+        min-height: auto;
+        padding: 24px;
+      }
+    }
   </style>
 </head>
 
