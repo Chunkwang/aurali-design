@@ -12,6 +12,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
   <style>
     *,
     *::before,
@@ -2202,11 +2205,13 @@
     .bento-section {
       border-top: 1px solid rgba(138, 79, 50, 0.08);
     }
+
     .bento-header {
       text-align: center;
       max-width: 600px;
       margin: 0 auto 64px auto;
     }
+
     .bento-badge {
       display: inline-flex;
       align-items: center;
@@ -2221,6 +2226,7 @@
       letter-spacing: 0.05em;
       margin-bottom: 16px;
     }
+
     .bento-header h2 {
       font-size: 36px;
       font-weight: 800;
@@ -2228,43 +2234,77 @@
       letter-spacing: -0.02em;
       margin-bottom: 16px;
     }
+
     .bento-header p {
       font-size: 14px;
       color: #6E6C64;
       line-height: 1.6;
     }
+
     .bento-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 24px;
     }
+
     .bento-card {
       border-radius: 32px;
-      border: 1px solid rgba(28, 27, 25, 0.08);
+      border: 1px solid rgba(138, 79, 50, 0.16);
       padding: 32px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
       min-height: 380px;
-      box-shadow: 0 4px 12px rgba(96, 94, 91, 0.03);
+      box-shadow: 0 4px 12px rgba(138, 79, 50, 0.04);
       position: relative;
-      text-align: left;
     }
-    
-    /* Card themes */
-    .bento-card.bg-purple { background-color: #FAF8FC; }
-    .bento-card.bg-blue { background-color: #F4F9FC; }
-    .bento-card.bg-orange { background-color: #FFFBF7; }
-    .bento-card.bg-[#F2F9F5] { background-color: #F2F9F5; }
-    .bento-card.bg-beige { background-color: #FAF9FC; }
-    .bento-card.bg-navy { background-color: #F4F7FC; }
-    .bento-card.bg-lime { background-color: #F8FAF2; }
+
+    /* Card themes (Updated to richer warm brand-aligned earth tones) */
+    .bento-card.bg-purple {
+      background-color: #EFE9E0;
+    }
+
+    .bento-card.bg-blue {
+      background-color: #E5EEF4;
+    }
+
+    .bento-card.bg-orange {
+      background-color: #F4EAE1;
+    }
+
+    .bento-card.bg-[#F2F9F5] {
+      background-color: #E7ECE8;
+    }
+
+    .bento-card.bg-beige {
+      background-color: #FAF5EF;
+    }
+
+    .bento-card.bg-navy {
+      background-color: #EAEBF2;
+    }
+
+    .bento-card.bg-lime {
+      background-color: #EFEFE2;
+    }
 
     /* Column grid mappings */
-    .col-5 { grid-column: span 5; }
-    .col-7 { grid-column: span 7; }
-    .col-4 { grid-column: span 4; }
+    .col-5 {
+      grid-column: span 5;
+    }
+
+    .col-7 {
+      grid-column: span 7;
+    }
+
+    .col-4 {
+      grid-column: span 4;
+    }
+
+    .col-6 {
+      grid-column: span 6;
+    }
 
     /* Inside card visual elements styling */
     .bento-visual {
@@ -2275,14 +2315,14 @@
       position: relative;
       padding: 16px 0;
     }
-    
+
     /* Prompts Card Mockup */
     .prompt-box {
       background: white;
       border-radius: 16px;
       padding: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(0, 0, 0, 0.05);
       max-width: 280px;
       width: 100%;
       font-size: 10px;
@@ -2291,6 +2331,7 @@
       gap: 12px;
       z-index: 2;
     }
+
     .prompt-tag {
       display: flex;
       align-items: center;
@@ -2298,20 +2339,23 @@
       color: #8a4f32;
       font-weight: 700;
     }
+
     .prompt-tag-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background: #8a4f32;
     }
+
     .prompt-content {
       background: #f4f4f5;
       padding: 10px;
       border-radius: 12px;
-      border: 1px solid rgba(0,0,0,0.05);
+      border: 1px solid rgba(0, 0, 0, 0.05);
       color: #1C1B19;
       line-height: 1.5;
     }
+
     .floating-device {
       position: absolute;
       right: 16px;
@@ -2320,8 +2364,8 @@
       height: 176px;
       background: #f4f4f5;
       border-radius: 16px;
-      border: 1px solid rgba(0,0,0,0.1);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       transform: rotate(12deg);
       display: flex;
       flex-direction: column;
@@ -2329,6 +2373,7 @@
       padding: 8px;
       z-index: 1;
     }
+
     .floating-device-screen {
       background: rgba(138, 79, 50, 0.1);
       flex-grow: 1;
@@ -2342,6 +2387,7 @@
       font-style: italic;
       font-family: 'Instrument Serif', serif;
     }
+
     .device-bar {
       height: 4px;
       background: #d4d4d8;
@@ -2358,14 +2404,17 @@
       max-width: 440px;
       margin: 0 auto;
     }
+
     .chat-row {
       display: flex;
       align-items: flex-start;
       gap: 12px;
     }
+
     .chat-row.right {
       justify-content: flex-end;
     }
+
     .chat-avatar {
       width: 32px;
       height: 32px;
@@ -2376,61 +2425,71 @@
       font-size: 11px;
       font-weight: 700;
     }
+
     .chat-avatar.user {
       background: #e4e4e7;
       color: #1C1B19;
     }
+
     .chat-avatar.ai {
       background: rgba(138, 79, 50, 0.1);
       color: #8a4f32;
     }
+
     .chat-bubble {
       font-size: 12px;
       padding: 10px 16px;
       border-radius: 16px;
       max-width: 80%;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
     }
+
     .chat-bubble.user {
       background: #8a4f32;
       color: white;
       border-top-right-radius: 0;
     }
+
     .chat-bubble.ai {
       background: white;
-      border: 1px solid rgba(0,0,0,0.06);
+      border: 1px solid rgba(0, 0, 0, 0.06);
       color: #1C1B19;
       border-top-left-radius: 0;
     }
+
     .chat-preview-box {
       background: white;
-      border: 1px solid rgba(0,0,0,0.06);
+      border: 1px solid rgba(0, 0, 0, 0.06);
       border-radius: 12px;
       padding: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
       display: flex;
       align-items: center;
       justify-content: space-between;
       font-size: 10px;
       width: 100%;
     }
+
     .preview-left {
       display: flex;
       align-items: center;
       gap: 8px;
     }
+
     .preview-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background: #10b981;
     }
+
     .preview-tags {
       display: flex;
       align-items: center;
       gap: 6px;
       opacity: 0.6;
     }
+
     .preview-tag {
       background: #f4f4f5;
       padding: 2px 6px;
@@ -2446,6 +2505,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .center-node {
       width: 48px;
       height: 48px;
@@ -2458,6 +2518,7 @@
       z-index: 3;
       box-shadow: 0 8px 16px rgba(138, 79, 50, 0.25);
     }
+
     .outer-node {
       position: absolute;
       background: white;
@@ -2470,23 +2531,53 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
       z-index: 2;
     }
+
     .outer-node-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
     }
-    .outer-node-dot.blue { background: #3b82f6; }
-    .outer-node-dot.green { background: #10b981; }
-    .outer-node-dot.orange { background: #f59e0b; }
-    .outer-node-dot.purple { background: #8b5cf6; }
 
-    .outer-node.top { top: 0; left: 50%; transform: translateX(-50%); }
-    .outer-node.bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
-    .outer-node.left { left: -16px; top: 35%; }
-    .outer-node.right { right: -16px; top: 35%; }
+    .outer-node-dot.blue {
+      background: #3b82f6;
+    }
+
+    .outer-node-dot.green {
+      background: #10b981;
+    }
+
+    .outer-node-dot.orange {
+      background: #f59e0b;
+    }
+
+    .outer-node-dot.purple {
+      background: #8b5cf6;
+    }
+
+    .outer-node.top {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .outer-node.bottom {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .outer-node.left {
+      left: -16px;
+      top: 35%;
+    }
+
+    .outer-node.right {
+      right: -16px;
+      top: 35%;
+    }
 
     /* Conversion Chart */
     .conversion-chart {
@@ -2494,10 +2585,11 @@
       border: 1px solid rgba(28, 27, 25, 0.08);
       border-radius: 16px;
       padding: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
       max-width: 200px;
       width: 100%;
     }
+
     .chart-header {
       display: flex;
       justify-content: space-between;
@@ -2507,26 +2599,35 @@
       color: #6E6C64;
       margin-bottom: 12px;
     }
+
     .chart-rate {
       color: #10b981;
       display: flex;
       align-items: center;
       gap: 2px;
     }
+
     .chart-bars {
       height: 64px;
       display: flex;
       align-items: flex-end;
       gap: 8px;
     }
+
     .chart-bar {
       flex-grow: 1;
       background: #f4f4f5;
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
     }
-    .chart-bar.fill-light { background: rgba(138, 79, 50, 0.25); }
-    .chart-bar.fill-full { background: #8a4f32; }
+
+    .chart-bar.fill-light {
+      background: rgba(138, 79, 50, 0.25);
+    }
+
+    .chart-bar.fill-full {
+      background: #8a4f32;
+    }
 
     /* Brand Settings panel */
     .brand-panel {
@@ -2534,7 +2635,7 @@
       border: 1px solid rgba(28, 27, 25, 0.06);
       border-radius: 16px;
       padding: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
       max-width: 200px;
       width: 100%;
       font-size: 9px;
@@ -2542,6 +2643,7 @@
       flex-direction: column;
       gap: 10px;
     }
+
     .brand-panel-header {
       display: flex;
       justify-content: space-between;
@@ -2551,24 +2653,31 @@
       font-weight: 700;
       color: #1C1B19;
     }
+
     .brand-logo-txt {
       font-family: 'Instrument Serif', serif;
       font-style: italic;
       color: #8a4f32;
       font-size: 11px;
     }
+
     .brand-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .brand-row span:first-child { color: #6E6C64; }
+
+    .brand-row span:first-child {
+      color: #6E6C64;
+    }
+
     .brand-color-box {
       width: 12px;
       height: 12px;
       border-radius: 3px;
       background: #8a4f32;
     }
+
     .brand-row-value {
       font-weight: 700;
       color: #1C1B19;
@@ -2583,21 +2692,23 @@
       max-width: 440px;
       margin: 0 auto;
     }
+
     .export-item {
       background: white;
       border: 1px solid rgba(28, 27, 25, 0.06);
       border-radius: 16px;
       padding: 16px 12px;
       text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
     }
+
     .export-item p {
       font-size: 9px;
       font-weight: 700;
       color: #1C1B19;
       margin-top: 4px;
     }
-    
+
     /* Playful Badge styling */
     .playful-badge {
       padding: 6px 16px;
@@ -2612,6 +2723,7 @@
       align-items: center;
       gap: 6px;
     }
+
     .playful-dot {
       width: 6px;
       height: 6px;
@@ -2628,6 +2740,7 @@
       margin-bottom: 8px;
       margin-top: 0;
     }
+
     .bento-card p {
       font-size: 12px;
       color: #6E6C64;
@@ -2635,18 +2748,83 @@
       margin: 0;
     }
 
-    @media (max-w: 768px) {
+    @media (max-width: 768px) {
       .bento-grid {
         grid-template-columns: 1fr;
         gap: 16px;
       }
-      .col-5, .col-7, .col-4 {
-        grid-column: span 12;
+
+      .col-5,
+      .col-7,
+      .col-4,
+      .col-6 {
+        grid-column: span 1;
       }
+
       .bento-card {
         min-height: auto;
         padding: 24px;
       }
+    }
+
+    /* Competitor Research Agent Visuals */
+    .research-container {
+      position: relative;
+      width: 180px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .research-center {
+      width: 44px;
+      height: 44px;
+      background: #8a4f32;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      box-shadow: 0 8px 20px rgba(138, 79, 50, 0.2);
+    }
+
+    .research-node {
+      position: absolute;
+      background: white;
+      border: 1px solid rgba(138, 79, 50, 0.15);
+      border-radius: 12px;
+      padding: 6px 12px;
+      font-size: 9px;
+      font-weight: 700;
+      color: #6E6C64;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+      z-index: 2;
+    }
+
+    .research-node.n1 {
+      top: 10px;
+      left: 10px;
+      transform: rotate(-5deg);
+    }
+
+    .research-node.n2 {
+      bottom: 10px;
+      right: 10px;
+      transform: rotate(4deg);
+    }
+
+    .research-node.n3 {
+      top: 20px;
+      right: 0;
+      transform: rotate(-3deg);
+    }
+
+    .research-node.n4 {
+      bottom: 15px;
+      left: -10px;
+      transform: rotate(6deg);
     }
   </style>
 </head>
@@ -2660,7 +2838,7 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#how">How it works</a></li>
+        <li><a href="#features-bento">Features</a></li>
         <li><a href="#showcase">Showcases</a></li>
         <li><a href="#pricing">Pricing</a></li>
       </ul>
@@ -2678,21 +2856,22 @@
 
 
     <div class="hero-container">
-      <div class="badge"><span class="badge-star">✦</span> App Store Listings & Onboarding Flows</div>
-      <h1>Screenshots and onboarding flows that turn traffic <span> into users.</span></h1>
-      <p><em>Bring your app marketing and product onboarding to life. Aurali's AI instantly designs panoramic screenshot wrappers and matching signup flows in seconds.</em></p>
+      <div class="badge"><span class="badge-star">✦</span> Category-Defining AI for Mobile Teams</div>
+      <h1>Build high-converting onboarding flows in minutes. <span> Export to code or Figma.</span></h1>
+      <p>Skip the design bottleneck. Aurali automatically generate custom user onboarding flows and wrapped App Store
+        screenshots matching your exact product brand.</p>
 
       <div id="waitlist-wrapper">
         <div class="form-box" id="waitlist-form">
-          <input type="email" id="email-input" placeholder="Enter your email address" required
+          <input type="email" id="email-input" placeholder="Enter your work email" required
             onkeydown="if(event.key==='Enter'){event.preventDefault();submitWaitlist();}">
-          <button id="submit-btn" onclick="submitWaitlist()">Join Waitlist &rarr;</button>
+          <button id="submit-btn" onclick="submitWaitlist()">Join the Waitlist &rarr;</button>
         </div>
         <div class="form-success" id="form-success">
           <span>✓</span> You're on the list! We'll notify you when Aurali launches.
         </div>
         <p class="form-error" id="form-error"></p>
-        <p class="form-trust">🔒 No spam, ever. Unsubscribe anytime.</p>
+        <p class="form-trust">The design tool built specifically for solo founders and developers.</p>
       </div>
     </div>
 
@@ -2708,266 +2887,251 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how" class="how-section">
-    <div class="badge">Workflow</div>
-    <h2>Design in minutes, not hours</h2>
-    <div class="workflow-split-container">
-
-      <!-- LEFT SIDE (30% Width): Steps List -->
-      <div class="workflow-steps-list">
-        <!-- Step 1 -->
-        <div class="workflow-step-card active" data-step="1">
-          <div class="step-num-badge">1</div>
-          <h3>One-Click Brand Extraction</h3>
-          <p>Stop wasting hours setting up frames manually. Paste your App Store link or upload raw screenshots, and
-            Aurali's AI instantly extracts your logo, brand typography, and core color palette in seconds.</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="workflow-step-card" data-step="2">
-          <div class="step-num-badge">2</div>
-          <h3>Panoramic Storytelling</h3>
-          <p>Unlike flat, isolated mockups, Aurali links your screens across a continuous background flow. These
-            panoramic wrappers guide the user's eye, driving higher engagement and direct downloads.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="workflow-step-card" data-step="3">
-          <div class="step-num-badge">3</div>
-          <h3>Ready-to-Submit App Packages</h3>
-          <p>Instantly download your screenshots automatically compiled for all device formats (iPhone 6.7", 6.5", iPad,
-            and Android). Clean of watermarks, compressed for speed, and 100% compliant with store guidelines.</p>
-        </div>
-      </div>
-
-      <!-- RIGHT SIDE (70% Width): browser mockup with custom recorded walkthrough loop -->
-      <div class="workflow-video-preview">
-        <div class="browser-mock-header">
-          <div class="browser-dots">
-            <div class="browser-dot red"></div>
-            <div class="browser-dot yellow"></div>
-            <div class="browser-dot green"></div>
-          </div>
-          <div class="browser-url-bar">aurali.design/sandbox-demo</div>
-        </div>
-        <div class="browser-video-container">
-          <img id="workflow-demo-img" src="assets/loop_video/aurali_walkthrough.webp"
-            class="absolute left-0 top-0 w-full h-full object-cover" alt="Aurali Walkthrough Demo">
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- FEATURES BENTO GRID -->
-  <section id="features-bento" class="max-w-7xl mx-auto px-6 py-20 border-t border-zinc-200/40">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/5 text-primary text-[11px] font-bold uppercase tracking-wider mb-4">
-        Platform Capabilities
-      </div>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-text tracking-tight mb-4">Modern designs by default.</h2>
-      <p class="text-xs md:text-sm text-muted">Make conversion-ready marketing visuals and onboarding screens instantly, then refine every color, layout, and message through chat.</p>
+  <section id="features-bento" class="bento-section" style="max-width: 1280px; margin: 0 auto; padding: 80px 24px;">
+    <div class="bento-header">
+      <div class="bento-badge">Onboarding Optimization</div>
+      <h2>Convert traffic into active users.</h2>
+      <p>Design beautiful signup screens and interactive flows backed by competitive research, then refine them
+        instantly.</p>
     </div>
 
     <!-- Bento Grid Container -->
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-      
-      <!-- Card 1: From prompt to polished ASO (5/12 cols) -->
-      <div class="md:col-span-5 bg-[#FAF8FC] border border-zinc-200/60 rounded-[32px] p-8 flex flex-col justify-between overflow-hidden min-h-[380px] shadow-sm">
-        <!-- Visual Content -->
-        <div class="w-full flex items-center justify-center py-4 relative">
-          <div class="bg-white rounded-2xl p-4 shadow-sm border border-zinc-100 max-w-[280px] w-full text-[10px] space-y-3 relative z-10">
-            <div class="flex items-center gap-2 text-primary font-bold">
-              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+    <div class="bento-grid">
+
+      <!-- Card 1: Onboarding Flow Engine (6/12 cols) -->
+      <div class="bento-card bg-purple col-6">
+        <div class="bento-visual">
+          <div class="prompt-box">
+            <div class="prompt-tag">
+              <span class="prompt-tag-dot"></span>
               Prompt of the Day!
             </div>
-            <div class="bg-zinc-50 p-2.5 rounded-xl border border-zinc-200/50 text-text leading-relaxed">
+            <div class="prompt-content">
               "Create app screenshots for a meditation app, warm terracotta tones, with clean text overlays."
             </div>
           </div>
-          <!-- Floating Mockups behind -->
-          <div class="absolute right-4 -bottom-4 w-32 h-44 bg-zinc-100 rounded-xl border border-zinc-200 shadow-lg rotate-12 flex flex-col justify-between p-2">
-            <div class="w-full h-3 bg-zinc-300 rounded"></div>
-            <div class="w-full h-24 bg-primary/10 rounded flex items-center justify-center text-primary text-xs italic">Aurali</div>
-            <div class="w-full h-3 bg-zinc-300 rounded"></div>
+          <!-- Floating Mockup -->
+          <div class="floating-device">
+            <div class="device-bar"></div>
+            <div class="floating-device-screen">Aurali</div>
+            <div class="device-bar"></div>
           </div>
         </div>
-        <!-- Card Text -->
-        <div class="mt-6">
-          <h3 class="text-xl font-extrabold text-text mb-2">From prompt to ASO screenshots</h3>
-          <p class="text-xs text-muted leading-relaxed">Describe what you need in your own words and watch your screenshots come to life with the right audience, tone, and layout.</p>
+        <div>
+          <h3>Onboarding Flow Engine</h3>
+          <p>Generate multi-page signup sequences (welcome splash, feature tours, user preferences, pricing) matching
+            successful layouts in your niche.</p>
         </div>
       </div>
 
-      <!-- Card 2: Refine through chat (7/12 cols) -->
-      <div class="md:col-span-7 bg-[#F4F9FC] border border-zinc-200/60 rounded-[32px] p-8 flex flex-col justify-between overflow-hidden min-h-[380px] shadow-sm">
-        <!-- Visual Content -->
-        <div class="flex-grow flex flex-col justify-center space-y-4 max-w-md mx-auto w-full py-4">
-          <!-- Chat 1 -->
-          <div class="flex items-start gap-3 justify-end">
-            <div class="bg-primary text-white text-xs px-4 py-2.5 rounded-2xl rounded-tr-none shadow-sm max-w-[80%]">
-              Add some trust badges under the headline
-            </div>
-            <div class="w-8 h-8 rounded-full bg-zinc-200 flex items-center justify-center text-xs font-bold text-text">YW</div>
+      <!-- Card 2: Natural Language Chat Editor (6/12 cols) -->
+      <div class="bento-card bg-blue col-6">
+        <div class="chat-simulator">
+          <!-- User message -->
+          <div class="chat-row right">
+            <div class="chat-bubble user">Make the headline bigger and change the button color to purple</div>
+            <div class="chat-avatar user">You</div>
           </div>
-          <!-- Chat 2 -->
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-xs text-primary font-bold">✨</div>
-            <div class="bg-white border border-zinc-200/60 text-xs px-4 py-2.5 rounded-2xl rounded-tl-none shadow-sm max-w-[80%] text-text">
-              Done! Added trust badges to build more credibility.
+          <!-- AI Response -->
+          <div class="chat-row">
+            <div class="chat-avatar ai">✨</div>
+            <div class="chat-bubble ai">Done! Updated the headline and button color. Here's your new updated version.
             </div>
           </div>
           <!-- Preview Box -->
-          <div class="bg-white border border-zinc-200/40 rounded-xl p-3 shadow-md flex items-center justify-between text-[10px]">
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-              <span class="font-semibold text-text font-bold">Designs that drive results</span>
+          <div class="chat-preview-box">
+            <div class="preview-left">
+              <span class="preview-dot"></span>
+              <span style="font-weight: 700; color: #1C1B19;">Designs that drive results</span>
             </div>
-            <div class="flex items-center gap-1.5 opacity-60">
-              <span class="px-1.5 py-0.5 bg-zinc-100 rounded">Slack</span>
-              <span class="px-1.5 py-0.5 bg-zinc-100 rounded">Notion</span>
-            </div>
-          </div>
-        </div>
-        <!-- Card Text -->
-        <div class="mt-6">
-          <h3 class="text-xl font-extrabold text-text mb-2">Edit your design through chat</h3>
-          <p class="text-xs text-muted leading-relaxed">Ask to write a headline, swap layout templates, update button colors, or convert the same idea into multiple store marketing assets.</p>
-        </div>
-      </div>
-
-      <!-- Card 3: Multi-device (4/12 cols) -->
-      <div class="md:col-span-4 bg-[#FFFBF7] border border-zinc-200/60 rounded-[32px] p-8 flex flex-col justify-between overflow-hidden min-h-[360px] shadow-sm">
-        <!-- Visual Content -->
-        <div class="w-full flex items-center justify-center py-6">
-          <div class="relative w-40 h-40 flex items-center justify-center">
-            <!-- Center Node -->
-            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg border border-primary/20 z-10">
-              <span class="material-symbols-outlined text-lg">devices</span>
-            </div>
-            <!-- Outer Nodes -->
-            <div class="absolute -top-2 left-1/2 -translate-x-1/2 bg-white px-2.5 py-1 rounded-full shadow border border-zinc-200/60 text-[9px] font-bold text-text flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> iPhone 6.7"
-            </div>
-            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white px-2.5 py-1 rounded-full shadow border border-zinc-200/60 text-[9px] font-bold text-text flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Android
-            </div>
-            <div class="absolute top-1/3 -left-4 bg-white px-2.5 py-1 rounded-full shadow border border-zinc-200/60 text-[9px] font-bold text-text flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> iPad Pro
-            </div>
-            <div class="absolute top-1/3 -right-4 bg-white px-2.5 py-1 rounded-full shadow border border-zinc-200/60 text-[9px] font-bold text-text flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Tablet 10"
+            <div class="preview-tags">
+              <span class="preview-tag">Slack</span>
+              <span class="preview-tag">Notion</span>
             </div>
           </div>
         </div>
-        <!-- Card Text -->
-        <div class="mt-4">
-          <h3 class="text-lg font-bold text-text mb-1">Adapts to every store format</h3>
-          <p class="text-xs text-muted leading-relaxed">Go from a single design prompt to ready-to-submit app store listing packages compliant with Apple & Google guidelines.</p>
+        <div>
+          <h3>Natural Language Chat Editor</h3>
+          <p>Refine layouts, change button actions, rewrite headlines, and adjust colors instantly by giving
+            instructions directly to our design AI.</p>
         </div>
       </div>
 
-      <!-- Card 4: Made to convert (4/12 cols) -->
-      <div class="md:col-span-4 bg-[#F2F9F5] border border-zinc-200/60 rounded-[32px] p-8 flex flex-col justify-between overflow-hidden min-h-[360px] shadow-sm">
-        <!-- Visual Content -->
-        <div class="w-full py-6 flex flex-col items-center justify-center">
-          <div class="bg-white border border-zinc-200/60 rounded-2xl p-4 shadow-sm max-w-[200px] w-full space-y-2">
-            <div class="flex items-center justify-between text-[8px] font-semibold text-muted">
+      <!-- Card 3: Competitor Research Agent (4/12 cols) -->
+      <div class="bento-card bg-orange col-4">
+        <div class="bento-visual">
+          <div class="research-container">
+            <div class="research-center">
+              <span class="material-symbols-outlined" style="font-size: 20px;">search</span>
+            </div>
+            <div class="research-node n1">Duolingo</div>
+            <div class="research-node n2">Calm</div>
+            <div class="research-node n3">Blinkist</div>
+            <div class="research-node n4">Headspace</div>
+          </div>
+        </div>
+        <div>
+          <h3>Competitor Research Agent</h3>
+          <p>Our background agents analyze top apps in your category, mapping out industry-standard onboarding flows and
+            screen sequence patterns.</p>
+        </div>
+      </div>
+
+      <!-- Card 4: AI Copywriter & CRO Coach (4/12 cols) -->
+      <div class="bento-card col-4" style="background-color: #E7ECE8;">
+        <div class="bento-visual">
+          <div class="conversion-chart">
+            <div class="chart-header">
               <span>Conversion Rate</span>
-              <span class="text-emerald-600 flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">trending_up</span> +34%</span>
+              <span class="chart-rate">
+                <span class="material-symbols-outlined" style="font-size: 10px;">trending_up</span> +34%
+              </span>
             </div>
-            <div class="h-16 flex items-end gap-2 pt-2">
-              <div class="w-full bg-zinc-100 rounded-t h-8"></div>
-              <div class="w-full bg-zinc-100 rounded-t h-10"></div>
-              <div class="w-full bg-zinc-100 rounded-t h-12"></div>
-              <div class="w-full bg-primary/25 rounded-t h-14"></div>
-              <div class="w-full bg-primary rounded-t h-16"></div>
+            <div class="chart-bars">
+              <div class="chart-bar" style="height: 32px;"></div>
+              <div class="chart-bar" style="height: 40px;"></div>
+              <div class="chart-bar" style="height: 48px;"></div>
+              <div class="chart-bar fill-light" style="height: 56px;"></div>
+              <div class="chart-bar fill-full" style="height: 64px;"></div>
             </div>
           </div>
         </div>
-        <!-- Card Text -->
-        <div class="mt-4">
-          <h3 class="text-lg font-bold text-text mb-1">Made to convert, not just look nice</h3>
-          <p class="text-xs text-muted leading-relaxed">Built-in visual hierarchy, copywriter-driven marketing headlines, and cognitive anchors designed to increase app installs.</p>
+        <div>
+          <h3>AI Copywriter &amp; CRO Coach</h3>
+          <p>Aurali drafts custom screen titles, descriptions, and button microcopy optimized to minimize signup
+            drop-offs and drive higher install conversions.</p>
         </div>
       </div>
 
-      <!-- Card 5: Keep on-brand (4/12 cols) -->
-      <div class="md:col-span-4 bg-[#FAF9FC] border border-zinc-200/60 rounded-[32px] p-8 flex flex-col justify-between overflow-hidden min-h-[360px] shadow-sm">
-        <!-- Visual Content -->
-        <div class="w-full py-6 flex items-center justify-center">
-          <div class="bg-white border border-zinc-200/50 rounded-2xl p-3.5 shadow-sm max-w-[200px] w-full space-y-2 text-[9px]">
-            <div class="flex justify-between items-center pb-2 border-b border-zinc-100">
-              <span class="font-bold text-text font-bold">Brand Settings</span>
-              <span class="text-primary font-bold italic text-[10px]">aurali</span>
+      <!-- Card 5: Automated Brand Extraction (4/12 cols) -->
+      <div class="bento-card bg-beige col-4">
+        <div class="bento-visual">
+          <div class="brand-panel">
+            <div class="brand-panel-header">
+              <span>Brand Settings</span>
+              <span class="brand-logo-txt">aurali</span>
             </div>
-            <div class="flex justify-between items-center">
-              <span class="text-muted">Primary Color</span>
-              <span class="w-3 h-3 rounded bg-primary"></span>
+            <div class="brand-row">
+              <span>Primary Color</span>
+              <span class="brand-color-box"></span>
             </div>
-            <div class="flex justify-between items-center">
-              <span class="text-muted">Typography</span>
-              <span class="font-semibold text-text font-serif">Instrument</span>
+            <div class="brand-row">
+              <span>Typography</span>
+              <span class="brand-row-value" style="font-family: 'Instrument Serif', serif;">Instrument</span>
             </div>
-            <div class="flex justify-between items-center">
-              <span class="text-muted">Asset Style</span>
-              <span class="px-1.5 py-0.2 bg-zinc-100 rounded text-text font-semibold">Flat Vector</span>
+            <div class="brand-row">
+              <span>Asset Style</span>
+              <span class="brand-row-value"
+                style="background: #f4f4f5; padding: 2px 6px; border-radius: 4px; font-size: 8px;">Flat Vector</span>
             </div>
           </div>
         </div>
-        <!-- Card Text -->
-        <div class="mt-4">
-          <h3 class="text-lg font-bold text-text mb-1">Keep everything on-brand</h3>
-          <p class="text-xs text-muted leading-relaxed">Load your logos, custom palettes, and fonts. Aurali synchronizes brand elements across both screenshot sequences and onboarding flows.</p>
+        <div>
+          <h3>Automated Brand Extraction</h3>
+          <p>Upload your logo or website URL. Aurali automatically extracts your brand palette, fonts, and assets to
+            apply them seamlessly across all screens.</p>
         </div>
       </div>
 
-      <!-- Card 6: Share and Export (7/12 cols) -->
-      <div class="md:col-span-7 bg-[#F4F7FC] border border-zinc-200/60 rounded-[32px] p-8 flex flex-col justify-between overflow-hidden min-h-[380px] shadow-sm">
-        <!-- Visual Content -->
-        <div class="flex-grow flex items-center justify-center py-4">
-          <div class="grid grid-cols-3 gap-3 w-full max-w-md">
-            <div class="bg-white border border-zinc-200/50 rounded-xl p-3 text-center shadow-sm">
-              <span class="material-symbols-outlined text-primary text-xl mb-1">play_circle</span>
-              <p class="text-[9px] font-bold text-text font-bold">Live Preview</p>
+      <!-- Card 6: Panoramic App Store Wrapper (5/12 cols) -->
+      <div class="bento-card bg-lime col-5">
+        <div class="bento-visual">
+          <div class="nodes-container">
+            <div class="center-node">
+              <span class="material-symbols-outlined" style="font-size: 20px;">layers</span>
             </div>
-            <div class="bg-white border border-zinc-200/50 rounded-xl p-3 text-center shadow-sm">
-              <span class="material-symbols-outlined text-primary text-xl mb-1">link</span>
-              <p class="text-[9px] font-bold text-text font-bold">Share Link</p>
+            <div class="outer-node top">
+              <span class="outer-node-dot blue"></span> Connected Bg
             </div>
-            <div class="bg-white border border-zinc-200/50 rounded-xl p-3 text-center shadow-sm">
-              <span class="material-symbols-outlined text-primary text-xl mb-1">download</span>
-              <p class="text-[9px] font-bold text-text font-bold">Export Code</p>
+            <div class="outer-node bottom">
+              <span class="outer-node-dot green"></span> Smooth Flow
+            </div>
+            <div class="outer-node left">
+              <span class="outer-node-dot orange"></span> Slide 1
+            </div>
+            <div class="outer-node right">
+              <span class="outer-node-dot purple"></span> Slide 2
             </div>
           </div>
         </div>
-        <!-- Card Text -->
-        <div class="mt-6">
-          <h3 class="text-xl font-extrabold text-text mb-2">Share, export, and ship</h3>
-          <p class="text-xs text-muted leading-relaxed">Send a secure live-preview link of your interactive onboarding flow to stakeholders, or download ready-to-run React/Tailwind frontend code.</p>
+        <div>
+          <h3>Panoramic App Store Wrapper</h3>
+          <p>Once your onboarding is ready, instantly compile it into beautiful wrapped App Store screenshots with
+            connected backgrounds in 1 click.</p>
         </div>
       </div>
 
-      <!-- Card 7: Fast/Playful (5/12 cols) -->
-      <div class="md:col-span-5 bg-[#F8FAF2] border border-zinc-200/60 rounded-[32px] p-8 flex flex-col justify-between overflow-hidden min-h-[380px] shadow-sm">
-        <!-- Visual Content -->
-        <div class="w-full flex items-center justify-center py-6">
-          <div class="px-4 py-1.5 rounded-full bg-[#E6F4D0] text-[#4D7C0F] text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#4D7C0F] animate-ping"></span>
-            buttery workflow
+      <!-- Card 7: Multi-Device Auto-Resizer (7/12 cols) -->
+      <div class="bento-card bg-blue col-7">
+        <div class="bento-visual">
+          <div class="nodes-container" style="width: 220px;">
+            <div class="center-node" style="background: #8a4f32;">
+              <span class="material-symbols-outlined" style="font-size: 20px;">devices</span>
+            </div>
+            <div class="outer-node top" style="top: -10px;">
+              <span class="outer-node-dot blue"></span> iPhone 6.7"
+            </div>
+            <div class="outer-node bottom" style="bottom: -10px;">
+              <span class="outer-node-dot green"></span> Android Play
+            </div>
+            <div class="outer-node left" style="left: -32px;">
+              <span class="outer-node-dot orange"></span> iPad Pro
+            </div>
+            <div class="outer-node right" style="right: -32px;">
+              <span class="outer-node-dot purple"></span> iPhone 6.5"
+            </div>
           </div>
         </div>
-        <!-- Card Text -->
-        <div class="mt-6">
-          <h3 class="text-xl font-extrabold text-text mb-2">Fast enough to feel playful</h3>
-          <p class="text-xs text-muted leading-relaxed">Generate, refine, iterate, and experiment in real-time. Designing your app store assets and signups will feel like play, not a chore.</p>
+        <div>
+          <h3>Multi-Device Auto-Resizer</h3>
+          <p>Export compliant screenshots perfectly sized for iPhone 6.7", 6.5", iPad, and Android Play Store standards
+            in one click.</p>
+        </div>
+      </div>
+
+      <!-- Card 8: Export Production React Code (7/12 cols) -->
+      <div class="bento-card bg-navy col-7">
+        <div class="bento-visual">
+          <div class="export-grid">
+            <div class="export-item">
+              <span class="material-symbols-outlined" style="color: #8a4f32; font-size: 24px;">code</span>
+              <p>Tailwind CSS</p>
+            </div>
+            <div class="export-item">
+              <span class="material-symbols-outlined" style="color: #8a4f32; font-size: 24px;">javascript</span>
+              <p>React Native</p>
+            </div>
+            <div class="export-item">
+              <span class="material-symbols-outlined" style="color: #8a4f32; font-size: 24px;">download</span>
+              <p>Raw JSON</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Export Production React Code</h3>
+          <p>Skip the developer handoff completely. Download clean, responsive React and Tailwind CSS frontend
+            components matching your layouts.</p>
+        </div>
+      </div>
+
+      <!-- Card 9: Figma & Live Web Sharing (5/12 cols) -->
+      <div class="bento-card bg-purple col-5">
+        <div class="bento-visual">
+          <div class="playful-badge" style="background: rgba(138, 79, 50, 0.1); color: #8a4f32;">
+            <span class="playful-dot" style="background: #8a4f32;"></span>
+            figma &amp; share links
+          </div>
+        </div>
+        <div>
+          <h3>Figma &amp; Live Web Sharing</h3>
+          <p>Download fully layered vector Figma files for advanced editing, or generate secure web preview links to
+            collect instant feedback.</p>
         </div>
       </div>
 
     </div>
   </section>
-
   <!-- PRICING -->
   <section id="pricing" class="pricing-section">
     <div class="badge">Pricing</div>
@@ -2975,13 +3139,12 @@
     <div class="pricing-grid">
       <div class="price-card blurred">
         <p class="price-title">Starter</p>
-        <p class="price-amount">$9<span> / month</span></p>
+        <p class="price-amount">$0<span> / month</span></p>
         <ul class="price-features">
-          <li>35 premium generations / mo</li>
-          <li>iOS device mockups (iPhone/iPad)</li>
-          <li>Access to standard presets</li>
-          <li>High-res PNG &amp; JPG exports</li>
-          <li>Standard queue generation speed</li>
+          <li><strong>35 AI onboarding flows</strong> / mo</li>
+          <li><strong>Standard</strong> UI templates</li>
+          <li><strong>Figma &amp; Image</strong> exports</li>
+          <li><strong>Standard</strong> queue render speed</li>
         </ul>
         <button class="btn-price" onclick="window.location.href='payment.html?plan=starter'">Get Starter</button>
       </div>
@@ -2991,15 +3154,17 @@
         <p class="price-title">Lifetime License</p>
         <p class="price-amount">$79<span> / one-time</span></p>
         <ul class="price-features">
-          <li>100 generations / month (resets monthly)</li>
-          <li>Full access to all Panoramic templates</li>
-          <li>iOS &amp; Android mockups (All sizes)</li>
-          <li>AI Custom background prompts (GPT Image 2)</li>
-          <li>Upload brand logo &amp; asset overlays</li>
-          <li>Export layouts directly as Figma files</li>
-          <li>Single-user account credentials</li>
+          <li><strong>100 AI Generation</strong> / month (never expires)</li>
+          <li><strong>Unlimited access</strong> to all Premium templates</li>
+          <li><strong>Direct React/Tailwind code</strong> export</li>
+          <li><strong>Automated App Store</strong> screenshot generator</li>
+          <li><strong>Custom brand fonts</strong> &amp; logos</li>
+          <li><strong>Figma vector</strong> layout exports</li>
+          <li><strong>Personal</strong> developer license</li>
         </ul>
-        <button class="btn-price primary" onclick="window.location.href='https://checkout.dodopayments.com/buy/pdt_0NiAFIEDApS8pCWx848Jn?quantity=1&redirect_url=https://aurali-design.vercel.app%2Fpayment.html%3Fplan%3Dlifetime'">Lock In Lifetime Access</button>
+        <button class="btn-price primary"
+          onclick="window.location.href='https://checkout.dodopayments.com/buy/pdt_0NiAFIEDApS8pCWx848Jn?quantity=1&redirect_url=https://aurali-design.vercel.app%2Fpayment.html%3Fplan%3Dlifetime'">Lock
+          In Lifetime Access</button>
         <div class="founder-note">
           <p>"We’re building Aurali to save developers and solo founders from spending hours in Figma just to launch.
             This early bird lifetime license directly funds our initial server and GPU rendering pipeline, keeping us
@@ -3010,14 +3175,14 @@
 
       <div class="price-card blurred">
         <p class="price-title">Growth</p>
-        <p class="price-amount">$25<span> / month</span></p>
+        <p class="price-amount">$00<span> / month</span></p>
         <ul class="price-features">
-          <li>120 premium generations / mo</li>
-          <li>iOS &amp; Android mockups (All sizes)</li>
-          <li>AI Custom background prompts</li>
-          <li>Custom brand font &amp; logo uploads</li>
-          <li>Export layouts directly as Figma files</li>
-          <li>Fast-track priority generation speed</li>
+          <li><strong>120 AI onboarding flows</strong> / mo</li>
+          <li><strong>Direct React/Tailwind code</strong> export</li>
+          <li><strong>Automated App Store</strong> screenshot generator</li>
+          <li><strong>Custom brand fonts</strong>, logos &amp; colors</li>
+          <li><strong>Figma vector</strong> layout exports</li>
+          <li><strong>Priority render queue</strong> (No waiting)</li>
         </ul>
         <button class="btn-price" onclick="window.location.href='payment.html?plan=growth'">Get Growth</button>
       </div>
@@ -3028,7 +3193,7 @@
   <footer>
     <p>© 2026 Aurali. All rights reserved.</p>
     <div>
-      <a href="#how">How it works</a>
+      <a href="#features-bento">Features</a>
       <a href="#pricing">Pricing</a>
       <a href="mailto:hello@aurali.design">Contact</a>
     </div>
