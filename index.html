@@ -1599,16 +1599,19 @@
 
     .price-features li {
       font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      position: relative;
+      padding-left: 20px;
       color: var(--muted);
+      line-height: 1.5;
     }
 
     .price-features li::before {
       content: '✓';
       color: var(--accent);
       font-weight: 800;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
 
     .btn-price {
@@ -2273,9 +2276,6 @@
       background-color: #F4EAE1;
     }
 
-    .bento-card.bg-[#F2F9F5] {
-      background-color: #E7ECE8;
-    }
 
     .bento-card.bg-beige {
       background-color: #FAF5EF;
@@ -2925,36 +2925,34 @@
         </div>
       </div>
 
-      <!-- Card 2: Natural Language Chat Editor (6/12 cols) -->
+      <!-- Card 2: Natural Language Design Editor (6/12 cols) -->
       <div class="bento-card bg-blue col-6">
         <div class="chat-simulator">
           <!-- User message -->
           <div class="chat-row right">
-            <div class="chat-bubble user">Make the headline bigger and change the button color to purple</div>
+            <div class="chat-bubble user">Make the headline bigger and change the button color to purple.</div>
             <div class="chat-avatar user">You</div>
           </div>
           <!-- AI Response -->
           <div class="chat-row">
             <div class="chat-avatar ai">✨</div>
-            <div class="chat-bubble ai">Done! Updated the headline and button color. Here's your new updated version.
-            </div>
+            <div class="chat-bubble ai">Done! Updated the headline and button color. Here's your new version.</div>
           </div>
           <!-- Preview Box -->
           <div class="chat-preview-box">
             <div class="preview-left">
               <span class="preview-dot"></span>
-              <span style="font-weight: 700; color: #1C1B19;">Designs that drive results</span>
+              <span style="font-weight: 700; color: #1C1B19;">Updated in 2s &bull; All changes applied</span>
             </div>
             <div class="preview-tags">
-              <span class="preview-tag">Slack</span>
-              <span class="preview-tag">Notion</span>
+              <span class="preview-tag">iOS</span>
+              <span class="preview-tag">App Store</span>
             </div>
           </div>
         </div>
         <div>
-          <h3>Natural Language Chat Editor</h3>
-          <p>Refine layouts, change button actions, rewrite headlines, and adjust colors instantly by giving
-            instructions directly to our design AI.</p>
+          <h3>Natural Language Design Editor</h3>
+          <p>Select any part of your screenshot or onboarding screen and tell Aurali what to change. Update text, colors, layouts, images, and more—just by chatting. Fast, accurate, and effortless.</p>
         </div>
       </div>
 
