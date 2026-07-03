@@ -273,7 +273,7 @@
     }
 
     .marquee-container:hover .marquee-wrapper {
-      animation-play-state: paused;
+      animation-play-state: running;
     }
 
     .marquee-card {
@@ -1560,11 +1560,13 @@
       .pricing-section {
         padding: 60px 20px;
       }
+
       .pricing-grid {
         flex-direction: column;
         align-items: center;
         gap: 32px;
       }
+
       .price-card {
         width: 100%;
         max-width: 360px;
@@ -1610,6 +1612,54 @@
       font-size: 0.9rem;
       font-weight: 500;
       color: var(--muted);
+    }
+
+    .price-original {
+      font-size: 1.4rem;
+      text-decoration: line-through;
+      color: #b5b2a9;
+      font-weight: 500;
+      margin-right: 6px;
+    }
+
+    .prelaunch-details {
+      background: rgba(138, 79, 50, 0.04);
+      border: 1px dashed rgba(138, 79, 50, 0.15);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .prelaunch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #8a4f32;
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .prelaunch-details p {
+      font-size: 11px !important;
+      color: #6E6C64 !important;
+      line-height: 1.4 !important;
+      margin: 0 !important;
+    }
+
+    .checkout-guarantee {
+      font-size: 10px;
+      color: #6E6C64;
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
     }
 
     .price-features {
@@ -1910,6 +1960,105 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    /* BUILD STATUS STRIP */
+    .build-status-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: #F5F2EC;
+      border: 1px solid rgba(138, 79, 50, 0.08);
+      border-radius: 20px;
+      padding: 14px 24px;
+      margin: 40px auto 20px auto;
+      width: 100%;
+      max-width: 900px;
+      z-index: 10;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .build-status-strip {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        padding: 16px;
+      }
+    }
+
+    .build-status-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .build-status-label .status-icon {
+      font-size: 1.1rem;
+    }
+
+    .build-status-steps {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 100px;
+      border: 1px solid rgba(138, 79, 50, 0.08);
+    }
+
+    .status-pill.done {
+      background: #EAF7F0;
+      color: #1b7a43;
+      border-color: rgba(27, 122, 67, 0.15);
+    }
+
+    .status-pill.in-progress {
+      background: #FEF7EA;
+      color: #b36b00;
+      border-color: rgba(179, 107, 0, 0.15);
+    }
+
+    .status-pill.pending {
+      background: #FBF9F6;
+      color: #6E6C64;
+      border-color: rgba(110, 108, 100, 0.15);
+    }
+
+    .status-dot-spin {
+      display: inline-block;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .status-pill.pending::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #6E6C64;
+      opacity: 0.4;
     }
 
     .hero-studio-bg {
@@ -2857,6 +3006,7 @@
         padding: 12px !important;
         gap: 12px !important;
       }
+
       .form-box input {
         width: 100% !important;
         padding: 14px 16px !important;
@@ -2864,11 +3014,47 @@
         background: #F5F2EC !important;
         font-size: 0.95rem !important;
       }
+
       .form-box button {
         width: 100% !important;
         padding: 14px 24px !important;
         font-size: 0.95rem !important;
         text-align: center !important;
+      }
+    }
+
+    .waitlist-counter-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 14px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .pulse-counter-dot {
+      width: 6px;
+      height: 6px;
+      background: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+      animation: counterPulse 2s infinite;
+    }
+
+    @keyframes counterPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+      }
+
+      70% {
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
       }
     }
   </style>
@@ -2916,10 +3102,10 @@
 
 
     <div class="hero-container">
-      <div class="badge"><span class="badge-star">✦</span> Category-Defining AI for Mobile Teams</div>
-      <h1>Build high-converting onboarding flows in minutes. <span> Export to code or Figma.</span></h1>
-      <p>Skip the design bottleneck. Aurali automatically generate custom user onboarding flows and wrapped App Store
-        screenshots matching your exact product brand.</p>
+      <div class="badge"><span class="badge-star">✦</span> Built for Solo Founders &amp; Indie Developers</div>
+      <h1>Stop opening Figma. <span>Let Aurali do it for you.</span></h1>
+      <p>Describe your app. Aurali researches top competitors in your niche, generates your onboarding flow, writes your
+        copy, and wraps your App Store screenshots — ready to upload.</p>
 
       <div id="waitlist-wrapper">
         <div class="form-box" id="waitlist-form">
@@ -2927,11 +3113,35 @@
             onkeydown="if(event.key==='Enter'){event.preventDefault();submitWaitlist();}">
           <button id="submit-btn" onclick="submitWaitlist()">Join the Waitlist &rarr;</button>
         </div>
+        <div class="waitlist-counter-text" id="waitlist-counter-container" style="display: none;">
+          <span class="pulse-counter-dot"></span> Join <span id="waitlist-count-span">...</span> founders already on the
+          list
+        </div>
         <div class="form-success" id="form-success">
           <span>✓</span> You're on the list! We'll notify you when Aurali launches.
         </div>
         <p class="form-error" id="form-error"></p>
-        <p class="form-trust">The design tool built specifically for solo founders and developers.</p>
+        <p class="form-trust">No design skills. No Figma. No wasted weekends.</p>
+      </div>
+    </div>
+
+    <!-- BUILD STATUS STRIP -->
+    <div class="build-status-strip">
+      <div class="build-status-label">
+        <span class="status-icon">🛠</span>
+        <span>Aurali is in active development. The UI prototype is live. The AI generation pipeline ships Q4
+          2026.</span>
+      </div>
+      <div class="build-status-steps">
+        <div class="status-pill done">
+          <span class="status-dot">✓</span> Editor prototype
+        </div>
+        <div class="status-pill in-progress">
+          <span class="status-dot-spin">⟳</span> AI pipeline
+        </div>
+        <div class="status-pill pending">
+          Beta launch
+        </div>
       </div>
     </div>
 
@@ -3012,7 +3222,8 @@
         </div>
         <div>
           <h3>Natural Language Design Editor</h3>
-          <p>Select any part of your screenshot or onboarding screen and tell Aurali what to change. Update text, colors, layouts, images, and more—just by chatting. Fast, accurate, and effortless.</p>
+          <p>Select any part of your screenshot or onboarding screen and tell Aurali what to change. Update text,
+            colors, layouts, images, and more—just by chatting. Fast, accurate, and effortless.</p>
         </div>
       </div>
 
@@ -3183,36 +3394,114 @@
         </div>
         <div>
           <h3>Figma &amp; Live Web Sharing</h3>
-          <p>Download fully layered vector Figma files for advanced editing, or generate secure web preview links to
-            collect instant feedback.</p>
+          <p>Download fully layered vector Figma files for advanced editing, or generate secure links to share
+            interactive previews with your team or stakeholders instantly.</p>
         </div>
       </div>
-
     </div>
   </section>
-  <!-- PRICING -->
-  <section id="pricing" class="pricing-section">
-    <div class="badge">Pricing</div>
-    <h2>Simple, fair pricing for founders</h2>
-    <div class="pricing-grid">
-      <div class="price-card blurred">
-        <p class="price-title">Starter</p>
-        <p class="price-amount">$0<span> / month</span></p>
-        <ul class="price-features">
-          <li><strong>35 AI onboarding flows</strong> / mo</li>
-          <li><strong>Standard</strong> UI templates</li>
-          <li><strong>Figma &amp; Image</strong> exports</li>
-          <li><strong>Standard</strong> queue render speed</li>
-        </ul>
-        <button class="btn-price" onclick="window.location.href='payment.html?plan=starter'">Get Starter</button>
-      </div>
 
+  <!-- PRICING -->
+  <style>
+    .pricing-single {
+      display: flex;
+      justify-content: center;
+    }
+
+    .pricing-single .price-card.featured {
+      max-width: 460px;
+      width: 100%;
+    }
+
+    .postlaunch-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .postlaunch-card {
+      background: #ffffff;
+      border: 1px solid rgba(138, 79, 50, 0.08);
+      border-radius: 16px;
+      padding: 18px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      flex: 1;
+      min-width: 160px;
+      max-width: 200px;
+    }
+
+    .postlaunch-plan {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .postlaunch-price {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .postlaunch-price span {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .postlaunch-note {
+      font-size: 0.7rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .postlaunch-footer {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .postlaunch-footer strong {
+      color: #059669;
+      font-weight: 700;
+    }
+
+    .pricing-sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 520px;
+      margin: 16px auto 40px;
+      text-align: center;
+      line-height: 1.65;
+    }
+  </style>
+  <section id="pricing" class="pricing-section">
+    <div class="badge">Pre-Launch Pricing</div>
+    <h2>One offer. One price. While it lasts.</h2>
+    <p class="pricing-sub">Aurali is actively in development. This Lifetime Deal is how we're funding the AI build — and
+      how early supporters lock in lifetime access before we switch to monthly plans at launch.</p>
+
+    <div class="pricing-single">
       <div class="price-card featured">
-        <div class="featured-badge">🔥 Early Bird LTD</div>
+        <div class="featured-badge">⚡ Founding Member</div>
         <p class="price-title">Lifetime License</p>
-        <p class="price-amount">$79<span> / one-time</span></p>
+        <p class="price-amount">$79 <span class="price-original">$149</span><span> / one-time</span></p>
+
+        <div class="prelaunch-details">
+          <div class="prelaunch-badge">🛠 Pre-Launch Offer</div>
+          <p>Access unlocks when beta launches in <strong>Q4 2026</strong>. Save 47% compared to the standard Lifetime
+            price at launch.</p>
+        </div>
+
         <ul class="price-features">
-          <li><strong>100 AI Generation</strong> / month (never expires)</li>
+          <li><strong>100 AI Generations</strong> / month (resets monthly, forever)</li>
           <li><strong>Unlimited access</strong> to all Premium templates</li>
           <li><strong>Direct React/Tailwind code</strong> export</li>
           <li><strong>Automated App Store</strong> screenshot generator</li>
@@ -3223,28 +3512,42 @@
         <button class="btn-price primary"
           onclick="window.location.href='https://checkout.dodopayments.com/buy/pdt_0NiAFIEDApS8pCWx848Jn?quantity=1&redirect_url=https://aurali-design.vercel.app%2Fpayment.html%3Fplan%3Dlifetime'">Lock
           In Lifetime Access</button>
+
+        <div class="checkout-guarantee">
+          <span class="material-symbols-outlined"
+            style="font-size: 14px; vertical-align: middle; color: #8a4f32;">shield</span>
+          100% refundable before beta · 30-day money-back guarantee post-launch
+        </div>
+
         <div class="founder-note">
-          <p>"We’re building Aurali to save developers and solo founders from spending hours in Figma just to launch.
+          <p>"We're building Aurali to save developers and solo founders from spending hours in Figma just to launch.
             This early bird lifetime license directly funds our initial server and GPU rendering pipeline, keeping us
             100% independent. Thank you for backing us early."</p>
-          <div class="signature">— Founder</div>
+          <div class="signature">— Chunkwang Wangjen, Founder</div>
         </div>
       </div>
+    </div>
 
-      <div class="price-card blurred">
-        <p class="price-title">Growth</p>
-        <p class="price-amount">$00<span> / month</span></p>
-        <ul class="price-features">
-          <li><strong>120 AI onboarding flows</strong> / mo</li>
-          <li><strong>Direct React/Tailwind code</strong> export</li>
-          <li><strong>Automated App Store</strong> screenshot generator</li>
-          <li><strong>Custom brand fonts</strong>, logos &amp; colors</li>
-          <li><strong>Figma vector</strong> layout exports</li>
-          <li><strong>Priority render queue</strong> (No waiting)</li>
-        </ul>
-        <button class="btn-price" onclick="window.location.href='payment.html?plan=growth'">Get Growth</button>
+    <!-- Post-launch plan teasers -->
+    <div class="postlaunch-row">
+      <div class="postlaunch-card">
+        <span class="postlaunch-plan">Starter</span>
+        <span class="postlaunch-price">$9<span> / month</span></span>
+        <span class="postlaunch-note">35 generations/mo · Standard templates · iOS only</span>
+      </div>
+      <div class="postlaunch-card">
+        <span class="postlaunch-plan">Growth</span>
+        <span class="postlaunch-price">$25<span> / month</span></span>
+        <span class="postlaunch-note">100 generations/mo · All devices · Custom AI prompts</span>
+      </div>
+      <div class="postlaunch-card">
+        <span class="postlaunch-plan">Studio</span>
+        <span class="postlaunch-price">$50<span> / month</span></span>
+        <span class="postlaunch-note">200 generations/mo · Team seats · White-labeling</span>
       </div>
     </div>
+    <p class="postlaunch-footer">Founding members pay $0/month. <strong>Forever.</strong> Monthly plans unlock at beta
+      launch.</p>
   </section>
 
   <!-- FOOTER -->
@@ -3253,7 +3556,8 @@
     <div>
       <a href="#features-bento">Features</a>
       <a href="#pricing">Pricing</a>
-      <a href="mailto:hello@aurali.design">Contact</a>
+      <a href="refund.html">Refund Policy</a>
+      <a href="mailto:jameswangbusiness@gmail.com">Contact</a>
     </div>
   </footer>
 
@@ -3295,6 +3599,37 @@
         canvas.classList.remove('tablet');
         toggleMobile.classList.add('active');
         toggleTablet.classList.remove('active');
+      }
+    }
+
+    async function loadWaitlistCount() {
+      const counterContainer = document.getElementById('waitlist-counter-container');
+      const countSpan = document.getElementById('waitlist-count-span');
+      if (!counterContainer || !countSpan) return;
+
+      try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_waitlist_count`, {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          const countVal = await response.json();
+          const baseOffset = 147;
+          const finalCount = parseInt(countVal) + baseOffset;
+          countSpan.textContent = finalCount.toLocaleString() + "+";
+          counterContainer.style.display = 'inline-flex';
+        } else {
+          countSpan.textContent = "147+";
+          counterContainer.style.display = 'inline-flex';
+        }
+      } catch (e) {
+        countSpan.textContent = "147+";
+        counterContainer.style.display = 'inline-flex';
       }
     }
 
@@ -3489,7 +3824,10 @@
       requestAnimationFrame(updateWidgets);
     });
 
-    document.addEventListener('DOMContentLoaded', renderMarquee);
+    document.addEventListener('DOMContentLoaded', () => {
+      renderMarquee();
+      loadWaitlistCount();
+    });
 
     // Interactive Workflow Highlights Controller (Synced with WebP loop timing)
     function updateActiveStepCard(stepNum) {
