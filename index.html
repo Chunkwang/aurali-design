@@ -269,7 +269,11 @@
     .marquee-wrapper {
       display: flex;
       width: max-content;
-      animation: scrollMarquee 40s linear infinite;
+      animation: scrollMarquee 65s linear infinite;
+    }
+
+    .marquee-container:hover .marquee-wrapper {
+      animation-play-state: paused;
     }
 
     .marquee-card {
