@@ -1,0 +1,13 @@
+{
+  "name": "aurali-design",
+  "version": "1.0.0",
+  "description": "AI App Store Screenshot & Onboarding Generator",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static HTML project - no build step required'"
+  },
+  "devDependencies": {
+    "@vercel/speed-insights": "^1.0.0"
+  }
+}
