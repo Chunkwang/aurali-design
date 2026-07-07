@@ -4,158 +4,56 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Aurali - Step 3: Generating</title>
+  <link rel="stylesheet" href="assets/shared.css">
+  <script src="assets/tailwind-theme.js"></script>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-                  "primary-container": "#d48c6b",
-                  "secondary-fixed-dim": "#cac6c2",
-                  "tertiary-fixed": "#a5f0ef",
-                  "inverse-on-surface": "#fbeee9",
-                  "surface-container": "#f8ebe6",
-                  "on-surface": "#201a18",
-                  "on-secondary-fixed-variant": "#484644",
-                  "on-error-container": "#93000a",
-                  "tertiary-container": "#5fa9a9",
-                  "on-tertiary-fixed-variant": "#004f50",
-                  "on-primary": "#ffffff",
-                  "inverse-primary": "#ffb695",
-                  "surface-container-high": "#f3e5e1",
-                  "tertiary": "#136969",
-                  "secondary-fixed": "#e6e2de",
-                  "surface-variant": "#ede0db",
-                  "on-secondary-fixed": "#1c1b19",
-                  "on-primary-container": "#58270d",
-                  "surface-container-low": "#fef1ec",
-                  "on-tertiary": "#ffffff",
-                  "secondary-container": "#e6e2de",
-                  "surface-dim": "#e4d7d3",
-                  "surface-container-highest": "#ede0db",
-                  "surface": "#fff8f6",
-                  "on-secondary-container": "#666461",
-                  "primary": "#8a4f32",
-                  "on-tertiary-container": "#003b3c",
-                  "on-primary-fixed": "#351000",
-                  "error-container": "#ffdad6",
-                  "error": "#ba1a1a",
-                  "on-primary-fixed-variant": "#6e381d",
-                  "on-surface-variant": "#53443d",
-                  "surface-container-lowest": "#ffffff",
-                  "surface-bright": "#fff8f6",
-                  "on-tertiary-fixed": "#002020",
-                  "tertiary-fixed-dim": "#89d3d3",
-                  "on-background": "#201a18",
-                  "background": "#fff8f6",
-                  "on-secondary": "#ffffff",
-                  "on-error": "#ffffff",
-                  "outline-variant": "#d8c2ba",
-                  "inverse-surface": "#362f2c",
-                  "primary-fixed": "#ffdbcc",
-                  "surface-tint": "#8a4f32",
-                  "primary-fixed-dim": "#ffb695",
-                  "outline": "#85736c",
-                  "secondary": "#605e5b"
-          },
-          "borderRadius": {
-                  "DEFAULT": "0.25rem",
-                  "lg": "0.5rem",
-                  "xl": "0.75rem",
-                  "full": "9999px"
-          },
-          "spacing": {
-                  "section-gap": "56px",
-                  "container-padding": "24px",
-                  "grid-gutter": "24px",
-                  "base": "8px",
-                  "element-gap": "16px"
-          },
-          "fontFamily": {
-                  "title-sm": ["Plus Jakarta Sans"],
-                  "headline-md": ["Plus Jakarta Sans"],
-                  "body-lg": ["Plus Jakarta Sans"],
-                  "headline-md-mobile": ["Plus Jakarta Sans"],
-                  "body-md": ["Plus Jakarta Sans"],
-                  "label-caps": ["Plus Jakarta Sans"],
-                  "display-lg": ["Plus Jakarta Sans"],
-                  "display-accent": ["Instrument Serif"]
-          },
-          "fontSize": {
-                  "title-sm": ["18px", { "lineHeight": "1.5", "fontWeight": "600" }],
-                  "headline-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
-                  "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                  "headline-md-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
-                  "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
-                  "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
-                  "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-                  "display-accent": ["48px", { "lineHeight": "1.1", "fontWeight": "400" }]
-          }
-      },
-      },
-    }
-  </script>
+
   <style>
-    body { background-color: #FBF9F6 !important; }
     .paper-texture {
-        background-color: #FBF9F6;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+      background-color: #FBF9F6;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
     }
     .drafting-line {
-        stroke: #d8c2ba;
-        stroke-width: 1;
-        stroke-dasharray: 4 4;
-        animation: dash 20s linear infinite;
+      stroke: #d8c2ba;
+      stroke-width: 1;
+      stroke-dasharray: 4 4;
+      animation: dash 20s linear infinite;
     }
     .drafting-line-solid {
-        stroke: #85736c;
-        stroke-width: 1;
+      stroke: #85736c;
+      stroke-width: 1;
     }
     .hit-point {
-        fill: #8a4f32;
-        animation: pulse-hit 2s infinite ease-in-out;
-        transform-origin: center;
+      fill: #8a4f32;
+      animation: pulse-hit 2s infinite ease-in-out;
+      transform-origin: center;
     }
     @keyframes dash {
-        to { stroke-dashoffset: 1000; }
+      to { stroke-dashoffset: 1000; }
     }
     @keyframes pulse-hit {
-        0% { transform: scale(1); opacity: 0.8; }
-        50% { transform: scale(1.5); opacity: 0.4; }
-        100% { transform: scale(1); opacity: 0.8; }
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.5); opacity: 0.4; }
+      100% { transform: scale(1); opacity: 0.8; }
     }
     .shimmer {
-        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-        background-size: 200% 100%;
-        animation: shimmer-anim 2s infinite;
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+      background-size: 200% 100%;
+      animation: shimmer-anim 2s infinite;
     }
     @keyframes shimmer-anim {
-        0% { background-position: -200% 0; }
-        100% { background-position: 200% 0; }
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
     }
     .card-elevation {
-        box-shadow: 0 4px 20px rgba(96, 94, 91, 0.06);
+      box-shadow: 0 4px 20px rgba(96, 94, 91, 0.06);
     }
     .progress-bar-fill {
-        transition: width 0.3s ease;
+      transition: width 0.3s ease;
     }
-    .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
-  
-    .surface-card {
-        background-color: #F5F2EC;
-        box-shadow: 0 4px 20px rgba(96, 94, 91, 0.08);
-    }
-
-    /* Hide system screenshot toasts or developer notifications in demo */
-    div[class*="screenshot"], div[id*="screenshot"], .screenshot-toast, .screenshot-notification, [id*="gemini-dev"], [class*="gemini-dev"] {
-      display: none !important;
-    }
-</style>
+  </style>
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () {
@@ -175,34 +73,34 @@
 <body class="paper-texture h-screen text-on-surface font-body-lg flex overflow-hidden antialiased">
 
   <!-- SideNavBar (Collapsed / Minimized Studio Mode) -->
-  <aside class="hidden md:flex h-full w-56 shadow-[20px_0_40px_rgba(96,94,91,0.04)] flex-col py-4 px-3 z-40 bg-surface shrink-0 border-r border-border/5">
+  <aside aria-label="Application sidebar" class="hidden md:flex h-full w-56 shadow-[20px_0_40px_rgba(96,94,91,0.04)] flex-col py-4 px-3 z-40 bg-surface shrink-0 border-r border-border/5">
     <!-- Header / Logo -->
     <div class="mb-8 px-2">
-      <a href="index.html" style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 500; font-size: 1.55rem; letter-spacing: -0.5px;" class="text-on-surface dark:text-surface-bright flex items-center">
+      <a href="index.html" class="logo-serif text-on-surface dark:text-surface-bright flex items-center">
         aurali.design
       </a>
     </div>
     <!-- Navigation Links -->
-    <nav class="space-y-1 bg-surface-container-low border border-outline-variant/30 rounded-xl p-2 mt-4 shadow-sm flex-grow">
-      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-colors duration-200 active:scale-95 transition-transform group text-[11px] font-semibold" href="#">
-        <span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors">home</span>
+    <nav aria-label="Application menu" class="space-y-1 bg-surface-container-low border border-outline-variant/30 rounded-xl p-2 mt-4 shadow-sm flex-grow">
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-all duration-200 active:scale-95 group text-[11px] font-semibold" href="#">
+        <span class="material-symbols-outlined text-sm group-hover:text-primary">home</span>
         <span>Home</span>
       </a>
       
-      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-colors duration-200 active:scale-95 transition-transform group text-[11px] font-semibold" href="#">
-        <span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors">folder_copy</span>
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-all duration-200 active:scale-95 group text-[11px] font-semibold" href="#">
+        <span class="material-symbols-outlined text-sm group-hover:text-primary">folder_copy</span>
         <span>My Projects</span>
       </a>
-      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-colors duration-200 active:scale-95 transition-transform group text-[11px] font-semibold" href="#">
-        <span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors">dashboard_customize</span>
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-all duration-200 active:scale-95 group text-[11px] font-semibold" href="#">
+        <span class="material-symbols-outlined text-sm group-hover:text-primary">dashboard_customize</span>
         <span>Templates</span>
       </a>
-      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-colors duration-200 active:scale-95 transition-transform group text-[11px] font-semibold" href="#">
-        <span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors">settings</span>
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-all duration-200 active:scale-95 group text-[11px] font-semibold" href="#">
+        <span class="material-symbols-outlined text-sm group-hover:text-primary">settings</span>
         <span>Settings</span>
       </a>
-      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-colors duration-200 active:scale-95 transition-transform group text-[11px] font-semibold" href="feedback.html">
-        <span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors">help</span>
+      <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container transition-all duration-200 active:scale-95 group text-[11px] font-semibold" href="feedback.html">
+        <span class="material-symbols-outlined text-sm group-hover:text-primary">help</span>
         <span>Help</span>
       </a>
     </nav>
@@ -212,8 +110,8 @@
         <span class="material-symbols-outlined text-sm">workspace_premium</span>
         Upgrade Plan
       </button>
-      <a class="flex items-center gap-3 py-1.5 text-secondary hover:text-error transition-colors duration-200 active:scale-95 group text-xs font-semibold" href="#">
-        <span class="material-symbols-outlined text-sm group-hover:text-error transition-colors">logout</span>
+      <a class="flex items-center gap-3 py-1.5 text-secondary hover:text-error transition-all duration-200 active:scale-95 group text-xs font-semibold" href="#" aria-label="Log out of your account">
+        <span class="material-symbols-outlined text-sm group-hover:text-error">logout</span>
         <span>Log Out</span>
       </a>
       <!-- User Profile Avatar (Placeholder) -->

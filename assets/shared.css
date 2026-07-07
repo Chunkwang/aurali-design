@@ -1,0 +1,79 @@
+/**
+ * Aurali — Shared Styles
+ * Used by: dashboard.html, project_step1-4.html, my_projects.html
+ *
+ * This file consolidates CSS that was previously duplicated verbatim
+ * in every dashboard page's inline <style> block.
+ */
+
+/* ── Body background override ── */
+body {
+  background-color: #FBF9F6 !important;
+}
+
+/* ── Surface card ── */
+.surface-card {
+  background-color: #F5F2EC;
+  box-shadow: 0 4px 20px rgba(96, 94, 91, 0.08);
+}
+
+/* ── Elevation layers ── */
+.elevation-2 {
+  box-shadow: 0 4px 20px rgba(96, 94, 91, 0.08);
+}
+
+.elevation-3 {
+  box-shadow: 0 12px 40px rgba(96, 94, 91, 0.06);
+}
+
+/* ── Organic/float shadows used on step pages ── */
+.organic-shadow {
+  box-shadow: 0 4px 20px rgba(96, 94, 91, 0.06);
+}
+
+.float-shadow {
+  box-shadow: 0 12px 40px rgba(138, 79, 50, 0.08);
+}
+
+/* ── Material Symbols Outlined base settings ── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ── Logo — Instrument Serif italic ── */
+.logo-serif {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.55rem;
+  letter-spacing: -0.5px;
+}
+
+/* ── Custom scrollbar (thin, branded) ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8c2ba;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #85736c;
+}
+
+/* ── Hide Gemini/IDE developer overlay notifications in production ── */
+div[class*="screenshot"],
+div[id*="screenshot"],
+.screenshot-toast,
+.screenshot-notification,
+[id*="gemini-dev"],
+[class*="gemini-dev"] {
+  display: none !important;
+}

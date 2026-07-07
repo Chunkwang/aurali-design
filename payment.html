@@ -44,6 +44,7 @@
       background-size: 24px 24px;
     }
   </style>
+  <script src="assets/config.js"></script>
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () {
@@ -66,8 +67,7 @@
   <!-- Header -->
   <header class="w-full max-w-7xl mx-auto px-6 py-5 flex items-center justify-between border-b border-zinc-200/50">
     <a href="index.html"
-      style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 500; font-size: 1.55rem; letter-spacing: -0.5px;"
-      class="text-text flex items-center">
+      class="logo-serif text-text flex items-center">
       aurali.design
     </a>
     <div class="flex items-center gap-2 text-muted text-xs font-medium">
@@ -175,13 +175,8 @@
   </footer>
 
   <script>
-    // Supabase configurations matching index.html
-    const SUPABASE_URL = 'https://abhucczsxwrxtyuspgll.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiaHVjY3pzeHdyeHR5dXNwZ2xsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0NDc1MDAsImV4cCI6MjA5ODAyMzUwMH0.5IlZXBnUmBsCVjckS6GmbbA5_elqxa3Xz0ToevePM80';
+    // Supabase and Dodo constants are loaded from assets/config.js
     
-    // Live Dodo Payments checkout links
-    const DODO_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NiAFIEDApS8pCWx848Jn?quantity=1&redirect_url=https://aurali-design.vercel.app%2Fpayment.html%3Fplan%3Dlifetime";
-
     const plans = {
       lifetime: {
         name: "Lifetime License",

@@ -7,6 +7,15 @@
   <title>Aurali — AI App Store Screenshot & Onboarding Generator</title>
   <meta name="description"
     content="Generate panoramic App Store screenshots and matching in-app onboarding flows in seconds. Explore templates inspired by top apps.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Aurali — AI App Store Screenshot & Onboarding Generator">
+  <meta property="og:description" content="Generate panoramic App Store screenshots and matching in-app onboarding flows in seconds.">
+  <meta property="og:url" content="https://aurali.design">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aurali — AI App Store Screenshot & Onboarding Generator">
+  <meta name="twitter:description" content="Generate panoramic App Store screenshots and matching in-app onboarding flows in seconds.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -3754,8 +3763,20 @@
       wrapper.innerHTML = html;
     }
 
-    // Interactive Canvas Widgets Animator (Floating, Flipping & Bubbling)
+    // Interactive Workflow Highlights Controller (Synced with WebP loop timing)
+    function updateActiveStepCard(stepNum) {
+      document.querySelectorAll('.workflow-step-card').forEach(card => {
+        if (parseInt(card.getAttribute('data-step')) === stepNum) {
+          card.classList.add('active');
+        } else {
+          card.classList.remove('active');
+        }
+      });
+    }
+
+    // Marquee, Waitlist Counter, and Workflow Card Controller — unified DOMContentLoaded
     document.addEventListener('DOMContentLoaded', () => {
+      // ── Widget Animator ──
       const leftDock = document.querySelector('.left-studio-dock');
       const rightDock = document.querySelector('.right-studio-dock');
 
@@ -3822,27 +3843,15 @@
       }
 
       requestAnimationFrame(updateWidgets);
-    });
 
-    document.addEventListener('DOMContentLoaded', () => {
+      // ── Marquee & Waitlist Counter ──
       renderMarquee();
       loadWaitlistCount();
-    });
 
-    // Interactive Workflow Highlights Controller (Synced with WebP loop timing)
-    function updateActiveStepCard(stepNum) {
-      document.querySelectorAll('.workflow-step-card').forEach(card => {
-        if (parseInt(card.getAttribute('data-step')) === stepNum) {
-          card.classList.add('active');
-        } else {
-          card.classList.remove('active');
-        }
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
+      // ── Interactive Workflow Highlights Controller ──
+      // (Synced with WebP loop timing — 20 second cycle)
       let virtualTime = 0;
-      const totalDuration = 20; // 20 seconds pointer-zoom walkthrough loop
+      const totalDuration = 20;
 
       setInterval(() => {
         virtualTime = (virtualTime + 1) % totalDuration;
